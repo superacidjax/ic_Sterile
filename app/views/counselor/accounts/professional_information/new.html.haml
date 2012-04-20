@@ -1,0 +1,90 @@
+%section#sign_up
+  %header
+    %h1 Counselor Sign Up
+
+  %nav.block_nav
+    %ul
+      %li{class: active_if_matches(/account(?!.*(session|professional))/)}= link_to "Account", '#'
+      %li{class: active_if_matches(/professional_information/)}= link_to "Professional Information", '#'
+      %li{class: active_if_matches(/session_preference/)}= link_to "Session Preferences", '#'
+
+  = fancy_form_for counselor, :url => counselor_account_professional_information_path, :html => {:method => :post, :class => "standard"} do |f|
+    %fieldset
+      %h1 Basic Information
+      = f.dl_input :date_select, :birthday, :default => Date.new(1970,1,1), :start_year => 1900, :end_year => Time.now.year
+      - if f.object.us?
+        = f.dl_input :text_field, :employer_id_number do
+          %p
+            %strong
+              Note: The Employer ID number is optional during the signup process, but it will be required before your first payment is issued.
+      = render 'users/gender_fields', :form => f
+    %fieldset
+      %h1 Education
+      %h2 Undergraduate
+      %dl
+        %dt= f.label :undergraduate_university, "University"
+        %dd= f.text_field :undergraduate_university
+        %dt= f.label :undergraduate_degree, "Degree"
+        %dd= f.text_field :undergraduate_degree
+      %h2 Graduate
+      %dl
+        %dt= f.label :graduate_university, "University"
+        %dd= f.text_field :graduate_university
+        %dt= f.label :graduate_degree, "Degree"
+        %dd= f.text_field :graduate_degree
+      %h2 Doctoral
+      %dl
+        %dt= f.label :doctoral_university, "University"
+        %dd= f.text_field :doctoral_university
+        %dt= f.label :doctoral_degree, "Degree"
+        %dd= f.text_field :doctoral_degree
+    %fieldset.professional_information
+      %h1 Professional Information
+      %dl
+        %dt= f.label :certifications, "Qualifications"
+        %dd
+          = f.text_area :certifications
+          %p (Separate with commas)
+      %dl
+        %dt Are you currently licensed?
+        %dd.radios.license_info
+          %ul
+            %li
+              %label
+                = f.radio_button :licensed, false
+                No
+            %li
+              %label
+                = f.radio_button :licensed, true
+                Yes
+              .details
+                = f.label :license_number, nil
+                = f.text_field :license_number
+                = f.label :licensing_authority, nil
+                = f.text_field :licensing_authority
+      %dl
+        %dt Has your license ever been suspended or revoked, or have you received a written reprimand or warning from any licensing authority or professional organization? (A "yes" answer does not automatically disqualify you – iCouch.me reviews each case individually.)
+        %dd.radios.license_suspension
+          %ul
+            %li
+              %label
+                = f.radio_button :license_suspended, false
+                No
+            %li
+              %label
+                = f.radio_button :license_suspended, true
+                Yes
+              .details
+                = f.text_area :license_suspension_explanation, :rows => 6, :cols => 50, :placeholder => 'If yes, what was the outcome of the case?'
+                = f.label :license_suspension_authority, "Licensing authority"
+                = f.text_field :license_suspension_authority
+                = f.label :license_suspension_date, "Approximate date"
+                = f.text_field :license_suspension_date
+      %h1 About you
+      %dl
+        %dt Please enter a short bio. This will be visible to potential clients. Allow your personality to shine through and explain how your approach can best help your clients. Try to limit it to 100 words. Be succinct and sell yourself!
+        %dd= f.text_area :counselor_bio, :rows => 6, :cols => 50
+    %fieldset.actions
+      %input(type="submit" value="Continue Registration")
+      = link_to 'Cancel', root_path
+      = render 'shared/privacy'

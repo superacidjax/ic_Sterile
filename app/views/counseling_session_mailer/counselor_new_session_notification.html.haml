@@ -1,0 +1,5 @@
+%p #{@counseling_session.client.name} has booked an iCouch session with you on #{@counseling_session.start_datetime.strftime("%A, %b %d at %l:%M %p")} #{counseling_session.counselor.time_zone}.
+- unless @counseling_session.client.skype_id.blank?
+  %p To start your session, please login to iCouch at least five minutes before your session time. From your dashboard, click "Start Session" next to your appointment listing. If you have any problems or questions, please email us at counselors@icouch.me. If you have a connection problem, you can alternatively use Skype. Your client's Skype ID is #{counseling_session.client.skype_id} and will connect with you if they are unable to use the iCouch system.
+- else
+  %p To start your session, please login to iCouch at least five minutes before your session time. From your dashboard, click "Start Session" next to your appointment listing. If you have any problems or questions, please email us at counselors@icouch.me. If you have a connection problem, you can alternatively use Skype. Your client has your Skype ID and will connect with you if they are unable to use the iCouch system.

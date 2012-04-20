@@ -1,0 +1,621 @@
+@import "mixins"
+
+form
+  p
+    padding: 0 0 5px 0
+    color: #999999
+  input[type="text"], input[type="password"], input[type="tel"], input[type="email"], textarea
+    +input
+    &.province
+      width: 189px
+    &.small
+      width: 93px
+    &.date
+      width: 67px
+      padding-left: 30px
+      background: #ffffff url("/images/icon_calendar.png") 5px 50% no-repeat
+  .field_with_errors
+    input, textarea
+      border-color: #c33
+  textarea
+    height: 90px
+  dl
+    clear: both
+    float: left
+    width: 820px
+    padding: 10px
+    dt
+      clear: both
+      float: left
+      width: 97px
+      padding: 8px 30px 0 0
+      text-align: right
+      span.field_error
+        display: block
+    dd
+      float: left
+      width: 450px
+      select
+        margin: 5px 5px 10px 0
+      ul.inline
+        padding: 8px 0 5px 0
+        li
+          display: inline
+          padding: 0 20px 0 0
+      label.checkbox
+        padding-left: 0
+    &.error
+      margin: 0 0 2px 0
+      background: #ffe5e5
+  label.checkbox
+    clear: both
+    display: block
+    padding: 0 0 15px 135px
+    a
+      font-weight: bold
+  fieldset.actions
+    padding: 0 0 0 135px
+    input[type="submit"]
+      +button
+      float: none
+      vertical-align: middle
+    a
+      margin: 0 5px 0 0
+      vertical-align: middle
+      color: #b3ab3c
+
+article.counselors, article.suggested_counselors
+  clear: both
+  li
+    clear: both
+    float: left
+    width: 100%
+    padding: 0 0 20px 0
+    margin: 0 0 20px 0
+    background: transparent url("/images/border_dotted_horizontal.gif") 0 100% repeat-x
+    img
+      float: left
+      padding: 2px
+      margin: 0 20px 0 0
+      border: 1px solid #cccccc
+    .contact_info
+      float: left
+      width: 310px
+      padding: 7px 30px 0 0
+      h3
+        font-size: 18px
+      p
+        padding: 0 0 15px 0
+        line-height: 140%
+    .specialties
+      overflow: hidden
+      padding: 10px 20px 0 0
+      h4
+        padding: 0 0 15px 0
+        font: normal 10px Georgia, serif
+        color: #999999
+        text-transform: uppercase
+        letter-spacing: 2px
+      p
+        line-height: 170%
+        a
+          font-weight: bold
+  p.more
+    clear: both
+    padding: 18px 20px
+    text-align: center
+    +border-radius(4px)
+    background: #d9efef
+    a
+      font-weight: bold
+section#dashboard
+
+  article.calendar
+    float: left
+    width: 220px
+    margin: 0 25px 0 0
+  article.sessions
+    float: left
+    width: 350px
+    margin: 0 30px 0 0
+    li
+      clear: both
+      float: left
+      width: 100%
+      padding: 0 0 20px 0
+      margin: 0 0 20px 0
+      background: transparent url("/images/border_dotted_horizontal.gif") 0 100% repeat-x
+      img
+        float: left
+        padding: 2px
+        margin: 0 20px 0 0
+        border: 1px solid #cccccc
+      .appointment_details
+        padding: 7px 0 0 0
+        overflow: hidden
+        h3
+          padding: 0 0 12px 0
+          font-size: 18px
+          font-weight: normal
+        .date
+          float: left
+          width: 100%
+          padding: 3px 0
+          margin: 0 0 10px 0
+          border: 1px solid #e0e0de
+          border-width: 1px 0
+          dl
+            float: left
+            padding: 0 18px 0 0
+            margin: 0 10px 0 0
+            background: transparent url("/images/border_dotted_vertical.gif") 100% 0 repeat-y
+            &:last-of-type
+              background: transparent
+            dt
+              padding: 0 0 3px 0
+              font: normal 10px Georgia, serif
+              color: #999999
+              text-transform: uppercase
+              letter-spacing: 2px
+        a.cancel
+          float: left
+          margin: 8px 0 0 0
+          font-size: 10px
+          color: #b3ab3c
+        span.disabled
+          +button
+          color: #c7c7c7
+          background: #e5e5e5
+  article.next_steps
+    float: left
+    width: 215px
+    li
+      padding: 0 0 10px 0
+      p
+        padding: 0 0 10px 0
+        line-height: 150%
+        a
+          font-weight: bold
+
+section#sign_up
+  form
+    h3
+      padding: 0 0 7px 0
+      margin: 0 0 25px 0
+      border-bottom: 1px solid #dddddd
+    .school
+      float: left
+      width: 214px
+      padding: 8px 10px 0 0
+      label
+        display: block
+        padding: 0 0 5px 0
+      input
+        width: 202px
+    ul
+      clear: both
+      float: left
+      width: 490px
+      padding: 8px 0 10px 0
+      &.inline
+        float: none
+        width: auto
+        padding: 8px 0 5px 0
+        li
+          display: inline
+          float: none
+          padding: 0 20px 0 0
+      &.radios
+        float: none
+        width: auto
+        li
+          clear: both
+          width: 100%
+          padding: 0 0 10px 0
+          label.radio
+            float: left
+            width: 107px
+            padding: 8px 20px 0 0
+          input[type="text"]
+            width: 132px
+            &.non_us
+              width: 330px
+          textarea
+            clear: none
+            height: 80px
+          .additional_info
+            clear: both
+            float: left
+            padding: 5px 0 10px 127px
+            .text_input
+              float: left
+              width: 164px
+              label
+                display: block
+                padding: 0 0 5px 0
+              input
+                width: 142px
+    li
+      float: left
+      width: 143px
+      padding: 0 20px 7px 0
+  fieldset.indented
+    padding: 0 0 0 125px
+    article
+      clear: both
+      width: 490px
+      padding: 10px
+      &.error
+        overflow: hidden
+        margin: 0 0 2px 0
+        background: #ffe5e5
+      h1
+        padding: 0 0 10px 0
+        font-weight: normal
+        line-height: 150%
+      textarea
+        +input
+        clear: both
+        display: block
+        width: 322px
+        height: 50px
+        margin: 0 0 10px 0
+      ul
+        padding-top: 0
+      p
+        padding: 0
+        &.error
+          padding: 0 0 10px 0
+          color: #cc0000
+  fieldset.actions
+    input
+      margin: 10px 10px 15px 0
+    p.privacy
+      padding: 3px 0 0 20px
+      font-size: 10px
+      color: #999999
+      background: transparent url("/images/icon_lock.png") 0 0 no-repeat
+  fieldset.basic
+    padding: 0 0 30px 0
+
+form#account_new
+  clear: both
+
+section#counselor_dashboard
+  form
+    p
+      color: #333333
+      float: left
+      text-align: left
+      margin-bottom: 5px
+    .default
+      label
+        color: #4b493d
+        float: right
+        text-align: right
+        input
+          margin-right: 5px
+    ul.weekdays
+      clear: both
+      margin-bottom: 24px
+      overflow: hidden
+      li
+        width: 119px
+        text-align: center
+        background: #e2e6dd
+        float: left
+        border-top: 1px solid #dddddd
+        border-left: 1px solid #fff
+        a
+          display: block
+          width: 89px
+          padding: 15px
+          font-size: 10px
+          color: #666666
+          background: transparent url("/images/bg_nav-shadow.png") 0 100% repeat-x
+          text-decoration: none
+          h4
+            font-weight: bold
+            font-size: 14px
+            strong
+              display: block
+              font-weight: bold
+              font-size: 18px
+      li.active
+        a
+          background: #fff
+          color: #333333
+    fieldset.times
+      margin: auto
+      width: 636px
+      margin-bottom: 30px
+      p, a
+        font-weight: bold
+      a
+        float: right
+      ul
+        clear: both
+        li
+          float: left
+          width: 105px
+          margin: 0 1px 1px 0
+          color: #999999
+          font-weight: bold
+          &.checked
+            color: #fff
+            label
+              background: #b33c85
+          label
+            display: block
+            padding: 7px
+            background: #e2e6dd
+          input
+            margin-right: 5px
+    fieldset.actions
+      border-top: 1px solid #dddddd
+      padding: 15px 0 0 0
+
+form#sign_in 
+  clear: both
+  fieldset
+    dd 
+      input
+        margin-right: 10px
+  fieldset.actions
+    input
+      margin: 0 10px 15px 0
+    p.privacy
+      padding: 3px 0 0 20px
+      font-size: 10px
+      color: #999999
+      background: transparent url("/images/icon_lock.png") 0 0 no-repeat
+
+section#counselors
+  article.counselors
+    clear: both
+    ul
+      clear: both
+      li
+        padding: 20px 0
+        clear: both
+        overflow: hidden
+        background: url(/images/border_dotted_horizontal.gif) bottom repeat-x
+        img
+          float: left
+          margin: 0 20px 0 0
+          padding: 2px
+          border: 1px solid #ccc
+        .counselor_details
+          float: left
+          width: 310px
+          margin: 0 20px 0 0
+          &.without_picture
+            width: 405px
+          h3
+            font-size: 18px
+            margin-bottom: 5px
+          dd
+            line-height: 18px
+          a
+            margin-top: 10px
+        .counselor_specialties
+          float: left
+          width: 405px
+          line-height: 18px
+          h3
+            font-family: Georgia
+            text-transform: uppercase
+            font-size: 10px
+            letter-spacing: 2px
+            color: #999
+            margin-bottom: 5px
+    .more
+      margin: 10px 0 0 0
+      padding: 15px
+      clear: both
+      text-align: center
+      +border-radius(6px)
+      background: #d4e9ed
+
+= input
+  width: 262px
+  height: 20px
+  padding: 3px 5px
+  margin: 0 0 5px 0
+  font: normal 13px Helvetica, Arial, sans-serif
+  color: #333333
+  border: 1px solid #cccccc
+  +border-radius(3px)
+
+form
+  h1
+    padding: 0 0 20px 0
+    font-size: 18px
+  p
+    padding: 0 0 5px 0
+    color: #999999
+  input[type="text"], input[type="password"], input[type="tel"], input[type="email"], textarea
+    +input
+    &.province
+      width: 189px
+    &.small
+      width: 93px
+    &.date
+      width: 67px
+      padding-left: 30px
+      background: #ffffff url("/images/icon_calendar.png") 5px 50% no-repeat
+  .field_with_errors
+    input, textarea
+      border-color: #c33
+  textarea
+    height: 90px
+  dl
+    clear: both
+    float: left
+    width: 820px
+    padding: 10px
+    dt
+      clear: both
+      float: left
+      width: 97px
+      padding: 8px 30px 0 0
+      text-align: right
+      span.field_error
+        display: block
+    dd
+      float: left
+      width: 450px
+      select
+        margin: 5px 5px 10px 0
+      ul.inline
+        padding: 8px 0 5px 0
+        li
+          display: inline
+          padding: 0 20px 0 0
+      label.checkbox
+        padding-left: 0
+    &.error
+      margin: 0 0 2px 0
+      background: #ffe5e5
+  label.checkbox
+    clear: both
+    display: block
+    padding: 0 0 15px 135px
+    a
+      font-weight: bold
+  fieldset.actions
+    padding: 0 0 0 135px
+    input[type="submit"]
+      +button
+      float: none
+      vertical-align: middle
+    a
+      margin: 0 5px 0 0
+      vertical-align: middle
+      color: #b3ab3c
+    p.privacy
+      padding: 3px 0 0 20px
+      font-size: 10px
+      color: #999999
+      background: transparent url("/images/icon_lock.png") 0 0 no-repeat
+
+section#sign_up
+  form
+    padding: 20px 0 0 0
+    h1
+      padding: 0 0 7px 0
+      margin: 0 0 25px 0
+      border-bottom: 1px solid #dddddd
+    .school
+      float: left
+      width: 214px
+      padding: 8px 10px 0 0
+      label
+        display: block
+        padding: 0 0 5px 0
+      input
+        width: 202px
+    ul
+      clear: both
+      float: left
+      width: 490px
+      padding: 8px 0 10px 0
+      &.inline
+        float: none
+        width: auto
+        padding: 8px 0 5px 0
+        li
+          display: inline
+          float: none
+          padding: 0 20px 0 0
+      &.radios
+        float: none
+        width: auto
+        li
+          clear: both
+          width: 100%
+          padding: 0 0 10px 0
+          label.radio
+            float: left
+            width: 107px
+            padding: 8px 20px 0 0
+          input[type="text"]
+            width: 132px
+            &.non_us
+              width: 330px
+          textarea
+            clear: none
+            height: 80px
+          .additional_info
+            clear: both
+            float: left
+            padding: 5px 0 10px 127px
+            .text_input
+              float: left
+              width: 164px
+              label
+                display: block
+                padding: 0 0 5px 0
+              input
+                width: 142px
+    li
+      float: left
+      width: 143px
+      padding: 0 20px 7px 0
+  fieldset.indented
+    padding: 0 0 0 125px
+    article
+      clear: both
+      width: 490px
+      padding: 10px
+      &.error
+        overflow: hidden
+        margin: 0 0 2px 0
+        background: #ffe5e5
+      h1
+        padding: 0 0 10px 0
+        font-weight: normal
+        line-height: 150%
+      textarea
+        +input
+        clear: both
+        display: block
+        width: 322px
+        height: 50px
+        margin: 0 0 10px 0
+      ul
+        padding-top: 0
+      p
+        padding: 0
+        &.error
+          padding: 0 0 10px 0
+          color: #cc0000
+  fieldset.actions
+    input
+      display: inline-block
+      margin: 10px 10px 15px 0
+  fieldset.basic
+    padding: 0 0 30px 0
+
+form#account_new
+  fieldset.actions
+    input
+      display: inline-block
+      margin: 0 10px 0 0
+      vertical-align: baseline
+    p
+      display: inline
+      vertical-align: baseline
+      &.privacy
+        display: block
+        margin-top: 15px
+
+#content
+  h2
+    padding: 18px 0 13px 0
+    margin: 0 0 20px 0
+    font-size: 10px
+    text-transform: uppercase
+    letter-spacing: 1px
+    border-bottom: 1px solid #e0e0de
+    background: transparent url("/images/bg_subheading.gif") 0 0 repeat-x

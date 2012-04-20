@@ -1,0 +1,60 @@
+!!!
+%html{html_attrs(I18n.locale)}
+  %head
+    %meta(http-equiv='Content-Type' content='text/html;charset=utf-8')
+    %meta(http-equiv='Content-Script-Type' content='text/javascript')
+    = csrf_meta_tag
+    %title #{@title}
+    /typekit
+    <script type="text/javascript" src="https://use.typekit.com/neh2ars.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>   
+    
+    /[if IE]
+      = javascript_include_tag "vendor/html5.js"
+    = stylesheet_link_tag "video"
+    = yield :head
+  %body
+    #sitewrapper
+      %header
+        %h1
+          = link_to "iCouch", root_path
+        #account_nav
+          %section 
+            %article
+              - if current_account && current_user.account
+                %p.user
+                  Welcome,
+                  %strong
+                    =link_to_if current_user.account.role_type == 'Counselor', current_user.first_name, counselor_path(current_user)
+                  %ul.account
+                    %li
+                      = link_to "My account", edit_account_path_for(current_user)
+                      |
+                    %li= link_to "Sign out", destroy_account_session_path
+      #content
+        #flash
+          - [:notice, :alert].each do |type|
+            - if flash.has_key?(type)
+              %p(class=type)= flash[type]
+        = yield
+      %footer
+        %nav
+          %h3
+            = link_to "iCouch", root_path
+          
+        %section
+          %p{:style => "color:#c43b84"}
+            If you are experiencing an
+            %strong
+              emergency
+            &mdash; online therapy is not right for you. Please
+            %strong
+              visit #{link_to "Befrienders Worldwide", href="http://www.befrienders.org"}
+            for help specific to your location.
+          %br
+          %p
+            iCouch is a registered trademark of iCouch, Inc. Copyright &copy; 2010-2012 iCouch, Inc., All Rights Reserved.
+            %br<>/
+            = link_to "Privacy Policy", privacy_policy_path
+            |
+            = link_to "Terms of Service", client_terms_of_service_path   

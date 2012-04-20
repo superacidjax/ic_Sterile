@@ -1,0 +1,5 @@
+= form_for(new_session(actual_date_for(day, hour)), url: schedule_counseling_sessions_path ) do |f|
+  = f.hidden_field :client_id
+  = f.hidden_field :counselor_id
+  = f.hidden_field :start_datetime
+  = f.submit label_for(actual_date_for(day, hour)), class: "button"

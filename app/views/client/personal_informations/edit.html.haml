@@ -1,0 +1,15 @@
+%section#sign_up
+
+  = render 'shared/account_nav'
+
+  - if new_user?
+    .success
+      %h2 Thanks, your account is now active
+      %p In order for us to best fullfill your needs, please fill out this information.
+
+  = fancy_form_for client, url: client_account_personal_information_path, html: {multipart: true, method: :put, class: "standard"} do |f|
+    = render 'form', form: f
+    %fieldset.actions
+      = f.submit("Save and Continue")
+      = link_to "Skip This", edit_client_account_additional_information_path
+      = render 'shared/privacy'

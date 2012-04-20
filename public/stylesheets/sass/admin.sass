@@ -1,0 +1,53 @@
+@import "mixins"
+
+#sitewrapper
+  background: transparent url("/images/bg_sitewrapper_admin.jpg") 0 0 repeat-x
+  > header
+    h1
+      margin: 0
+      a
+        width: 154px
+        height: 60px
+        background: transparent url("/images/logo_admin.png") 0 0 no-repeat
+    nav
+      position: absolute
+      right: 0
+      bottom: 0
+      z-index: 2
+
+section#client_counselors_show
+  float: left
+  width: 100%
+  p.go_back
+    margin: 0
+    padding: 0
+  article
+    padding: 0 20px 0
+    header
+      overflow: hidden
+      margin-bottom: 20px
+      img
+        position: relative
+        float: left
+        top: 0
+        left: 0
+        margin: 0 30px 0 0
+      .stats
+        float: left
+        padding-top: 15px
+        h1
+          font-size: 18px
+          padding-bottom: 6px
+        p
+          padding-bottom: 6px
+      .actions
+        .button
+          padding: 4px 7px
+          line-height: 150%
+    dl.standard
+      padding-left: 130px
+      & + dl.standard
+        float: left
+  a.button
+    float: right
+    text-align: right

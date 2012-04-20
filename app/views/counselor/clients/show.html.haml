@@ -1,0 +1,58 @@
+%section#counselor_clients_show
+
+  %p.go-back= link_to "Back to Client List", counselor_clients_path
+
+  %article
+    %h1= client.name
+    %hgroup.bordered
+      %h2 Personal Information
+    %dl
+      %dt Location
+      %dd= client.location
+    %dl
+      %dt Languages
+      %dd= languages_for(client)
+    %dl
+      %dt Age
+      %dd= client.age
+    %dl
+      %dt Education
+      %dd= client.education
+    %dl
+      %dt Employment Status
+      %dd= client.employment_status
+    %dl
+      %dt Relationship Status
+      %dd= client.relationship_status
+    %hgroup.bordered
+      %h2
+        Session Preferences
+    %dl
+      %dt Counseling Before
+      %dd= yes_or_no(client.previously_counseled)
+    %dl
+      %dt Currently In Therapy
+      %dd= yes_or_no(client.currently_counseled)
+    %dl.half
+      %dt Special Needs
+      %dd= issues_for(client)
+    %dl.half
+      %dt Religious Preferences
+      %dd= religions_for(client)
+    %hgroup.bordered
+      %h2 General Availability
+    %ul.availability
+      - Availability::DAYS.each do |day|
+        %li
+          %h3= day.titleize
+          = availability_on_day(client, day)
+
+  %aside
+    = image_tag(dummy_image(140, 140), alt: "")
+    %dl.standard
+      %dt Emergency Contact
+      %dd
+        %strong= client.emergency_contact_name
+        = client.emergency_contact_relationship
+        %br/
+        = client.emergency_contact_phone_number

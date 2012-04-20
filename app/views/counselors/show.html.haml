@@ -1,0 +1,68 @@
+- content_for :head do
+  %meta{name: "description", content: "Find an iCouch Therapist."}/
+  %meta{name: "keywords", content: "online counseling, counselors, therapists, online therapists, find a therapist, psychologist, psychoanalyst, find a great therapist" }/
+
+%section#client_counselors_show
+  %p.go_back= link_to "Back to Search Results", counselors_path if current_user.kind_of? Client
+  %article
+    = image_tag counselor.avatar.profile.url, alt: counselor.name
+    %h1= counselor.name
+    %dl.standard
+      - if show_skype_id?
+        %dt Skype ID
+        %dd= counselor.skype_id
+      %dt Session Rate
+      %dd
+        %strong
+          $#{counselor.session_rate} per 50 minutes
+      %dt Location
+      %dd= counselor.location
+      %dt Specialties
+      %dd= issues_for(counselor)
+      %dt Education
+      %dd
+        %p= counselor.undergraduate_degree
+        %p= counselor.undergraduate_university 
+      %dd
+        %p= counselor.graduate_degree 
+        %p= counselor.graduate_university
+      %dd
+        %p= counselor.doctoral_degree 
+        %p= counselor.doctoral_university
+      %dt Certifications
+      %dd= counselor.certifications
+    %dl.standard
+      %dt Languages
+      %dd= languages_for(counselor)
+      %dt Religious Specialties
+      %dd= religions_for(counselor)
+      %dt License
+      %dd= counselor.license_number
+      %dt Licensing authority
+      %dd= counselor.licensing_authority
+
+  %article.copy
+    %h3 Bio
+    %p= counselor.counselor_bio
+
+  - if counselor.active?
+    %article.info
+      %hgroup.bordered
+        %h2 Book an available session
+      %hgroup
+        %h2 This Week
+        %h3
+          #{counselor.time_zone} time
+        %p
+          =link_to "Time Zone Converter", "http://www.timezoneconverter.com/cgi-bin/tzc.tzc"
+      = display_counselor_availability_list_this_week
+      %hgroup.bordered
+      %hgroup
+        %h2 Next Week
+        %h3
+          #{counselor.time_zone} time
+      = display_counselor_availability_list_next_week
+  - else
+    %article.info
+      %hgroup.bordered
+        %h2 Counselor is inactive.

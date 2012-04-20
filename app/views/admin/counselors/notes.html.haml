@@ -1,0 +1,37 @@
+%section#counselor_show
+  %hgroup
+    %h1 Counselors
+  %p.back= link_to "Back to Counselors List", "#"
+  #main
+    %article.counselor_stats
+      = image_tag counselor.avatar.profile.url, :alt => counselor.name
+      .stats
+        %h3= counselor.name
+        %p Joined #{counselor.created_at.to_date.strftime('%B %d, %Y')}
+    %nav.block_nav
+      %ul
+        %li= link_to "Overview", [:admin, :counselor]
+        %li.active= link_to "Notes", "#"
+    %article.info.notes
+      %h4 Notes
+      = form_for [:admin, counselor] do |f|
+        %fieldset
+          = f.label :notes, :class => 'cloak'
+          = f.text_area :notes, :html_options => {:rows => 12, :cols => 40}
+        %fieldset.actions
+          = f.submit 'Update note', :class => 'button'
+    %article.info.documents
+      %h4 Documents
+      %form(action="" method="post")
+        %fieldset
+          %label Add A Document
+          %input(type="file")
+      %ul
+        - 3.times do
+          %li
+            %p= link_to "Document.pdf", "#"
+            = link_to "Remove", "#", :class => "remove"
+  #sidebar
+    = link_to "Edit Account", "#", :class => "button"
+    %hr/
+    = button_to 'Approve Counselor', approve_admin_counselor_path(counselor)

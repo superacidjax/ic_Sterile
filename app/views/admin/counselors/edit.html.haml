@@ -1,0 +1,126 @@
+%section#counselor_show
+  %hgroup
+    %h1 Counselors
+  %p.back= link_to "Back to Counselors List", admin_counselors_path
+  #main
+    %article.counselor_stats
+      = image_tag counselor.avatar.profile.url, :alt => counselor.name
+      .stats
+        %h3= counselor.name
+        %p Joined #{counselor.created_at.to_date.strftime('%B %d, %Y')}
+    %nav.block_nav
+      %ul
+        %li.active= link_to "Overview", "#"
+        %li= link_to "Notes", notes_admin_counselor_path(counselor)
+  #main
+    %article.info
+      = fancy_form_for counselor, :html => {:multipart => true} do |f|
+        %h1 Basic Information
+        %dl
+          %dt= f.label :counselor_bio
+          %dd= f.text_area :counselor_bio, :rows => 6, :cols => 50
+          %dt= f.label :email
+          %dd= f.text_field :email
+          %dt= f.label :password
+          %dd= f.password_field :password
+          %dt= f.label :password_confirmation
+          %dd= f.password_field :password_confirmation
+          %dt= f.label :phone_number
+          %dd= f.phone_field :phone_number
+        = render 'users/address_fields', :form => f
+        %dl{:class => ('error' if f.object.errors[:avatar].any?)}
+          %dt= f.label :avatar
+          %dd
+            %p= image_tag f.object.avatar.profile.url, :alt => ''
+            = f.file_field :avatar
+            = f.hidden_field :avatar_cache
+        %fieldset
+        %h3 Education
+        %fieldset
+          %dl
+          %dt Undergraduate
+          .school
+          %dd
+            %dd
+              = f.label :undergraduate_university, "University"
+              = f.text_field :undergraduate_university
+              = f.label :undergraduate_degree, "Degree"
+              = f.text_field :undergraduate_degree
+          %dl
+          %dt Graduate
+          .school
+          %dd
+            %dd
+              = f.label :graduate_university, "University"
+              = f.text_field :graduate_university
+              = f.label :graduate_degree, "Degree"
+              = f.text_field :graduate_degree
+          %dl
+          %dt Doctoral
+          %dd
+            %dd
+              = f.label :doctoral_university, "University"
+              = f.text_field :doctoral_university
+              = f.label :doctoral_degree, "Degree"
+              = f.text_field :doctoral_degree
+            %dt
+        %fieldset
+          %h3 Professional Information
+          %dl
+            %dt
+            %dd
+            = f.article "Certifications" do |af|
+              = af.text_field :certifications, :placeholder => "separate with commas"
+          %dl
+            %dt
+            %dd
+            = f.article "Currently licensed?" do |af|
+              %ul.radios
+                %li
+                  %label.radio
+                    = af.radio_button :licensed, false
+                    No
+                %li
+                  %label.radio
+                    = af.radio_button :licensed, true
+                    Yes
+                  = af.label :license_number, nil, :class => 'cloak'
+                  = af.text_field :license_number
+                  = af.label :licensing_authority, nil, :class => 'cloak'
+                  = af.text_field :licensing_authority
+          %dl
+            %dt
+            %dd
+            = f.article "License suspension/revoked/reprimanded?" do |af|
+              %ul.radios
+                %li
+                  %label.radio
+                    = af.radio_button :license_suspended, false
+                    No
+                %li
+                  %label.radio
+                    = af.radio_button :license_suspended, true
+                    Yes
+                %dd
+                = af.text_area :license_suspension_explanation, :rows => 6, :cols => 50, :placeholder => 'If yes, what was the outcome of the case?'
+                .additional_info
+                  %li
+                    = af.text_field :license_suspension_authority, :placeholder => 'license authority'
+                    = af.text_field :license_suspension_date, :placeholder => 'approximate date'
+        %fieldset.indented
+          %article
+            %h1 Specialties
+            %dl
+            = f.check_box_list_with_other :issues
+          %article
+            %h1 Languages
+            %dl
+            = f.check_box_list_with_other :languages
+          %article
+            %h1 Religions
+            %dl
+            = f.check_box_list_with_other :religions
+            %dl
+        %fieldset.actions
+          %input(type="submit" value="Save Changes")
+          = link_to 'Cancel', admin_counselors_path

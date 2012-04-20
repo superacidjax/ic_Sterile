@@ -1,0 +1,61 @@
+- content_for :head do
+  %meta{name: "description", content: "Sign up for iCouch to find a therapist and get secure counseling online."}
+  %meta{name: "keywords", content: "counseling, therapy, sign up, find a therapist" }
+  %title
+    =@title = "iCouch Web | Signup"
+  %script{src: "https://js.stripe.com/v1/", type: "text/javascript"}
+
+%section#sign_up
+  %header
+    %h1 Schedule a Session
+  %booking
+    %confirmation
+      %h2
+        Booking an appointment with
+        %strong
+          #{ counselor.name }
+        at
+        %strong
+          #{ start_datetime.strftime('%A, %B, %e at %l:%M%P')}
+        for
+        %strong
+          $#{counselor.session_rate.to_s}
+      = image_tag counselor.avatar.profile.url, alt: counselor.name
+
+
+    %h1
+      Already have an account?
+      = link_to("Sign in", new_account_session_path)
+  = fancy_form_for client, url: client_account_path, html: {:class => "standard"} do |f|
+    %fieldset.basic
+      %h1 Basic Information
+      = f.dl_input :text_field, :first_name
+      = f.dl_input :text_field, :last_name
+      = render 'users/address_fields', :form => f
+    %fieldset
+      %h1 Account Information
+      / = f.dl_input :text_field, :skype_id
+      = f.dl_input :email_field, :email
+      = f.dl_input :password_field, :password
+      = f.dl_input :password_field, :password_confirmation
+      %label.checkbox(for="client_terms_of_service")
+        = f.check_box :terms_of_service
+        I agree to the
+        = link_to "Terms of Service", client_terms_of_service_path
+        and
+        = link_to "Privacy Policy", privacy_policy_path
+        = f.error_message_on :terms_of_service
+    %fieldset
+      %h1 Payment Information
+      = render :partial => 'shared/stripe_form'
+
+    %fieldset.actions
+      %input(type="submit" value="Finished")
+      = link_to "Cancel", root_path
+      = render 'shared/privacy'
+  %hr
+
+:javascript
+  Stripe.setPublishableKey("#{STRIPE_PUBLISHABLE_KEY}");
+
+= javascript_include_tag("stripe_form")

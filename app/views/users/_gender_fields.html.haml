@@ -1,0 +1,12 @@
+%dl{:class => ('error' if form.object.errors[:gender].any?)}
+  %dt= form.label_with_error :gender
+  %dd
+    %ul.inline
+      %li
+        %label
+          = form.radio_button :gender, "Male"
+          Male
+      %li
+        %label
+          = form.radio_button :gender, "Female"
+          Female

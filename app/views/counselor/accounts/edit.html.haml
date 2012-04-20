@@ -1,0 +1,31 @@
+%section#counselor_show
+  %header
+    %h1 My Account
+
+  = render :partial => 'counselor_edit_nav'
+
+  = fancy_form_for current_user, url: counselor_account_path, html: {multipart: true, class: 'standard'} do |f|
+    %fieldset
+      %h1 Basic Information
+      %dl
+        %dt= f.label :email
+        %dd= f.text_field :email
+        %dt= f.label :password
+        %dd= f.password_field :password
+        %dt= f.label :password_confirmation
+        %dd= f.password_field :password_confirmation
+        %dt= f.label :phone_number
+        %dd= f.phone_field :phone_number
+        %dt= f.label :skype_id
+        %dd= f.text_field :skype_id
+      = render 'users/address_fields', form: f
+      %dl{class: ('error' if f.object.errors[:avatar].any?)}
+        %dt= f.label :avatar
+        %dd
+          %p= image_tag f.object.avatar.profile.url, alt: ''
+          = f.file_field :avatar
+          = f.hidden_field :avatar_cache
+    %fieldset.actions
+      %input(type='submit' value='Save settings')
+      = link_to 'Cancel', root_path
+      = render 'shared/privacy'

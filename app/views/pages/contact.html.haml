@@ -1,0 +1,23 @@
+- content_for :head do
+  %meta{:name => "description", :content => "Contact iCouch for questions about online counseling, investment, complaints, compliments or technical support."}/
+  %meta{:name => "keywords", :content => "counseling, contact, invest, Brian Dear, Jessica Rios, tech support, questions, online counseling, media" }/
+  - @title ="Contact iCouch"
+  %title =@title
+  
+%section#static_content
+  %header
+    %h1 Contact us!
+  %article.copy
+    %p To cancel a session (must be at least 48 hours before a scheduled session time,) email your name and counselor's name to #{mail_to 'cancellations@iCouch.me'}.
+    %p For questions about online counseling or general questions about therapy: #{mail_to 'clients@iCouch.me'}
+    %p If you are a counselor and want more information about joining the iCouch Network: #{mail_to 'counselors@iCouch.me'}
+    %p Technical Support: #{mail_to 'helpme@iCouch.me'}
+    %p Complaints or Compliments: #{mail_to 'listen2me@iCouch.me'}
+    %p For Media Inquires please visit our #{link_to"Media Page", href="media"} for specific contacts.
+    %p Investment Inquiries: #{mail_to 'brian@iCouch.me'}
+    %p
+      %strong
+        If you are experiencing an emergency call 911 your local emergency
+        services number immediately. If you are feeling suicidal and feel like
+        you may try to hurt yourself, call the National Suicide Prevention
+        Lifeline at 1-800-273-8255.

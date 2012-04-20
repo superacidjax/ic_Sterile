@@ -1,0 +1,114 @@
+%fieldset
+  %h1 Personal Information
+  = form.hidden_field :current_step, :value => 'personal_information'
+  %dl{class: ('error' if form.object.errors[:avatar].any?)}
+    %dt= form.label :avatar
+    %dd
+      %p= image_tag form.object.avatar.profile.url, alt: ''
+      = form.file_field :avatar
+      = form.hidden_field :avatar_cache
+  = form.dl_input :date_select, :birthday, :default => Date.new(1970,1,1), :start_year => 1900, :end_year => Time.now.year
+  = render 'users/gender_fields', :form => form
+  %dl{:class => form.error_class_on(:relationship_status)}
+    %dt
+      = form.label_with_error :relationship_status
+    %dd
+      %ul
+        %li
+          %label
+            = form.radio_button :relationship_status, 'single'
+            Single
+        %li
+          %label
+            = form.radio_button :relationship_status, 'divorced'
+            Divorced
+        %li
+          %label
+            = form.radio_button :relationship_status, 'engaged'
+            Engaged
+        %li
+          %label
+            = form.radio_button :relationship_status, 'separated'
+            Separated
+        %li
+          %label
+            = form.radio_button :relationship_status, 'widow'
+            Widow/Widower
+        %li
+          %label
+            = form.radio_button :relationship_status, 'married'
+            Married or Domestic Partnership
+  %dl{:class => form.error_class_on(:employment_status)}
+    %dt
+      = form.label_with_error :employment_status
+    %dd
+      %ul
+        %li
+          %label
+            = form.radio_button :employment_status, 'school'
+            In school
+        %li
+          %label
+            = form.radio_button :employment_status, 'full_time'
+            Full-time
+        %li
+          %label
+            = form.radio_button :employment_status, 'part_time'
+            Part-time
+        %li
+          %label
+            = form.radio_button :employment_status, 'stay_at_home_parent'
+            Stay at home parent
+        %li
+          %label
+            = form.radio_button :employment_status, 'self_employed'
+            Self-employed
+        %li
+          %label
+            = form.radio_button :employment_status, 'retired'
+            Retired
+        %li
+          %label
+            = form.radio_button :employment_status, 'unemployed'
+            Unemployed
+  %dl{:class => form.error_class_on(:education)}
+    %dt
+      = form.label_with_error :education
+    %dd
+      %ul
+        %li
+          %label
+            = form.radio_button :education, 'no_diploma'
+            Less than high school
+        %li
+          %label
+            = form.radio_button :education, 'high_school'
+            High school
+        %li
+          %label
+            = form.radio_button :education, 'some_college'
+            Some college
+        %li
+          %label
+            = form.radio_button :education, 'associate'
+            2 year degree
+        %li
+          %label
+            = form.radio_button :education, 'bachelorate'
+            4 year degree
+        %li
+          %label
+            = form.radio_button :education, 'some_graduate'
+            Some graduate school
+        %li
+          %label
+            = form.radio_button :education, 'advanced'
+            Advanced degree
+        %li
+          %label
+            = form.radio_button :education, 'professional'
+            Professional (law/medicine)
+        %li
+          %label
+            = form.radio_button :education, 'technical'
+            Trade/Technical school

@@ -1,0 +1,21 @@
+%article
+  %hgroup.bordered
+    %h1 Suggested counselors
+  %ul.standard.people
+    - recommended_counselors.each do |counselor|
+      %li
+        = link_to image_tag(counselor.avatar.medium.url), counselor_path(counselor)
+        .details
+          %h2= link_to counselor.name, counselor_path(counselor)
+          %p
+            = counselor.location
+            %span
+              \|
+            = languages_for(counselor)
+        %dl
+          %dt Specialties
+          %dd
+            = issues_for(counselor, 3)
+  .tip
+    Want to find another Counselor to work with?
+    = link_to 'Search for More Counselors', search_counselors_path

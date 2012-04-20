@@ -1,0 +1,15 @@
+%li
+  = link_to image_tag(counselor.avatar.small.url, alt: counselor.name), counselor
+  .details
+    %h2= link_to counselor.name, counselor
+    %p
+      = counselor.location
+      %span
+        \|
+      = languages_for(counselor)
+    %p
+      %strong
+        $#{counselor.session_rate} per 50 minutes
+  %dl
+    %dt Specialties
+    %dd= issues_for(counselor)

@@ -1,0 +1,126 @@
+!!!
+%html{html_attrs(I18n.locale)}
+  %head
+    <link href="https://plus.google.com/110024933098302682084" rel="publisher" />
+    %meta(http-equiv='Content-Type' content='text/html;charset=utf-8')
+    %meta(http-equiv='Content-Script-Type' content='text/javascript')
+    = csrf_meta_tag
+    %title #{@title}
+    /typekit
+    <script type="text/javascript" src="https://use.typekit.com/neh2ars.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>   
+    /Start of Google Code
+    <meta name="google-site-verification" content="j0ilhj3VpeDmIzQEYMCX0hQ2Qc1S5LiKP4FxlKMzmx4" />
+    <script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-21822274-1']); _gaq.push(['_trackPageview']); (function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script>
+    
+    /[if IE]
+      = javascript_include_tag "vendor/html5.js"
+    = stylesheet_link_tag "application", "forms"
+    = javascript_include_tag :defaults, 'registration', "vendor/counselor_dashboard"
+    <!-- begin olark code --><script type='text/javascript'>/*{literal}<![CDATA[*/
+    window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){f[z]=function(){(a.s=a.s||[]).push(arguments)};var a=f[z]._={},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={0:+new Date};a.P=function(u){a.p[u]=new Date-a.p[0]};function s(){a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{b.contentWindow[g].open()}catch(w){c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{var t=b.contentWindow[g];t.write(p());t.close()}catch(x){b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
+    /* custom configuration goes here (www.olark.com/documentation) */
+    olark.identify('1811-522-10-4532');/*]]>{/literal}*/</script>
+    <!-- end olark code -->
+    = yield :head
+  %body
+    #sitewrapper
+      %header
+        %h1
+          = link_to "iCouch", root_path
+        - if signed_in?
+          %nav
+            %ul
+              %li{class: active_if_matches(/dashboard/)}
+                = link_to "My Dashboard", root_path
+              - if current_user.kind_of?(Client)
+                %li{class: active_if_matches(/counselors/)}
+                  = link_to "My Therapists", counselors_path
+              - if current_user.kind_of?(Counselor)
+                %li{class: active_if_matches(/clients/)}
+                  = link_to "My Clients", counselor_clients_path
+        #account_nav
+          %section 
+            %article
+              - if current_account && current_user.account
+                %p.user
+                  Welcome,
+                  %strong
+                    =link_to_if current_user.account.role_type == 'Counselor', current_user.first_name, counselor_path(current_user)
+                - unless current_user.kind_of?(Guest)
+                  %ul.account
+                    %li
+                      = link_to "My account", edit_account_path_for(current_user)
+                      |
+                    %li= link_to "Sign out", destroy_account_session_path
+              - else
+                %ul.account
+                  %li= link_to "Sign in", new_account_session_path
+              %social
+                = link_to image_tag("/images/twitter32.png"), href="http://twitter.com/icouchme"
+                = link_to image_tag("/images/facebook32.png"), href="http://www.facebook.com/pages/iCouchme/118950071461826"
+                = link_to image_tag("/images/googleplus32.png"), href="https://plus.google.com/110024933098302682084?prsrc=3"
+                = link_to image_tag("/images/vimeo32.png"), href="http://vimeo.com/channels/icouch"
+                .g-plusone{"data-href" => "http://secure.icouch.me"}
+                
+
+      #content
+        #flash
+          - [:notice, :alert].each do |type|
+            - if flash.has_key?(type)
+              %p(class=type)= flash[type]
+        = yield
+      %footer
+        %nav
+          %h3
+            = link_to "iCouch", root_path
+          %ul
+            %li= link_to "About Us", about_us_path
+            %li= link_to "Media", href="http://media.icouch.me"
+            %li= link_to "Blog", href="http://blog.icouch.me"
+            %li= link_to "FAQ", faqs_path
+            %li= link_to "Ethics", ethical_code_path
+            %li= link_to "Lounge", the_lounge_path
+            %li= link_to "Contact", contact_path
+            - if current_user.kind_of?(Guest)
+              %li= link_to "For Counselors", counselor_info_path
+        %section
+          %social
+            = link_to image_tag("/images/twitter32.png"), href="http://twitter.com/icouchme"
+            = link_to image_tag("/images/facebook32.png"), href="http://www.facebook.com/pages/iCouchme/118950071461826"
+            = link_to image_tag("/images/googleplus32.png"), href="https://plus.google.com/110024933098302682084?prsrc=3"
+            = link_to image_tag("/images/vimeo32.png"), href="http://vimeo.com/channels/icouch"
+            .g-plusone{"data-href" => "http://secure.icouch.me"}
+            :javascript
+              (function() {
+              var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+              po.src = 'https://apis.google.com/js/plusone.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+              })();
+            
+          %p{:style => "color:#c43b84"}
+            If you are experiencing an
+            %strong
+              emergency
+            &mdash; online therapy is not right for you. Please
+            %strong
+              visit #{link_to "Befrienders Worldwide", href="http://www.befrienders.org"}
+            for help specific to your location.
+          %br
+          %p
+            iCouch is a registered trademark of iCouch, Inc. Copyright &copy; 2010-2012 iCouch, Inc., all rights reserved.
+            %br<>/
+            = link_to "Privacy Policy", privacy_policy_path
+            |
+            = link_to "Terms of Service", client_terms_of_service_path
+            %br
+            %br
+            %br
+            = link_to image_tag("/images/nyc.png"), href="http://nytm.org/made"
+      //crazyegg
+      <script type="text/javascript">
+      setTimeout(function(){var a=document.createElement("script");
+      var b=document.getElementsByTagName('script')[0];
+      a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0012/5793.js?"+Math.floor(new Date().getTime()/3600000);
+      a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+      </script>  

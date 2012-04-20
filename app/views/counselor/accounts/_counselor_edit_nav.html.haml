@@ -1,0 +1,6 @@
+%nav.block_nav
+  %ul
+    %li{class: active_if_matches(/account(?!.*(session|professional))/)}= link_to "Account", edit_counselor_account_path
+    %li{class: active_if_matches(/professional_information/)}= link_to "Professional Information", edit_counselor_account_professional_information_path
+    %li{class: active_if_matches(/session_preference/)}= link_to "Session Preferences", edit_counselor_account_session_preference_path
+    %li{class: active_if_matches(/my_public_page/)}= link_to "My Public Page", counselor_path(current_user)

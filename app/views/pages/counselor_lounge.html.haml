@@ -1,0 +1,20 @@
+- content_for :head do
+  %meta{:name => "description", :content => "The iCouch Counselor Lounge is the place for counselors to learn more about how to use iCouch and become a better online counselor!"}/
+  %meta{:name => "keywords", :content => "counseling, ethics, learn, education, therapy, questions, online therapy, online counseling, etherapy, training, research" }/
+  - @title ="The iCouch Counselor Lounge"
+  %title =@title
+
+%section#static_content
+  %header
+    %h1 The iCouch Counselor Lounge
+  %article.copy
+    %h2 iCouch Counselors -- this page is for you!
+    %ul
+      %li= link_to "First Steps", counselor_first_steps_path
+      %li= link_to "The iCouch Ethical Code", ethical_code_path
+      %li= link_to "Frequently Asked Questions", faqs_path
+      %li= link_to "Learn about Online Counseling", about_online_counseling_path
+      %li= link_to "The iCouch Blog", "http://blog.icouch.me"
+      %li= link_to "Therapy Styles", therapy_styles_path
+      %li= link_to "Need training?", "http://www.1shoppingcart.com/app/?af=1437080"
+      %li= mail_to "jessica@icouch.me?subject=iCouch: I have a question", "Ask iCouch"

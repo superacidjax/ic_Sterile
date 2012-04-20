@@ -1,0 +1,34 @@
+%section#counselor_show
+  %hgroup
+    %h1 Clients
+  %p.back= link_to "Back to Clients List", "#"
+  #main
+    %article.counselor_stats
+      .stats
+        %h3 John Smith
+        %p Joined August 25, 2010
+    %nav.block_nav
+      %ul
+        %li= link_to "Overview", [:admin, :client]
+        %li.active= link_to "Notes & Documents", "#"
+    %article.info.notes
+      %h4 Notes
+      = form_for [:admin, client] do |f|
+        %fieldset
+          = f.label :notes, :class => 'cloak'
+          = f.text_area :notes, :html_options => {:rows => 12, :cols => 40}
+        %fieldset.actions
+          = f.submit 'Update note', :class => 'button'
+    %article.info.documents
+      %h4 Documents
+      %form(action="" method="post")
+        %fieldset
+          %label Add A Document
+          %input(type="file")
+      %ul
+        - 3.times do
+          %li
+            %p= link_to "Document.pdf", "#"
+            = link_to "Remove", "#", :class => "remove"
+  #sidebar
+    = link_to "Edit Account", "#", :class => "button"

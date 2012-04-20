@@ -1,0 +1,52 @@
+%fieldset
+  %h1 Emergency Contact
+  = f.dl_input :text_field, :emergency_contact_name
+  = f.dl_input :text_field, :emergency_contact_phone_number
+  = f.dl_input :text_field, :emergency_contact_relationship
+  %dl
+    %dd
+      %label.checkbox
+        = f.check_box :emergency_contact_permitted
+        I give permission for my iCouch.me counselor to contact in case of emergency.
+        = f.error_message_on(:emergency_contact_permitted)
+%fieldset.session_preferences
+  %h1 Session Preferences
+  %dl
+    %dt Have you ever had counseling before?
+    %dd
+      %ul
+        %li
+          %label
+            = f.radio_button :previously_counseled, true
+            Yes
+        %li
+          %label
+            = f.radio_button :previously_counseled, false
+            No
+    %dt Are you currently seeing a counselor/psychologist/psychiatrist?
+    %dd
+      %ul
+        %li
+          %label
+            = f.radio_button :currently_counseled, true
+            Yes
+        %li
+          %label
+            = f.radio_button :currently_counseled, false
+            No
+    %dt If you were referred by an iCouch counselor, please enter your referral code.
+    %dd
+      %input(type="text")
+    %dt What are your concerns?
+    %dd.checkboxes
+      %ul
+        - issues.each do |issue|
+          %li
+            = check_box_tag 'client[issue_ids][]', issue.id, issues_ids.include?(issue.id) ,id: "client_issues_ids_#{issue.id}"
+            = label_tag "client_issues_ids_#{issue.id}", issue.name.titleize, false
+    %dt= f.label :other_issues
+    %dd= f.text_area :other_issues
+    %dt Your counselor should speak
+    %dd.checkboxes= f.check_box_list_with_other :languages
+    %dt You would prefer a counselor familiar with the following religion(s) or denominations
+    %dd.checkboxes= f.check_box_list_with_other :religions

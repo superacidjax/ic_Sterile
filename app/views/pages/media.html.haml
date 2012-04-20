@@ -1,0 +1,41 @@
+- content_for :head do
+  %meta{:name => "description", :content => "iCouch Media Relations has experts on online counseling available for interviews."}/
+  %meta{:name => "keywords", :content => "counseling, contact, media, press, Spanish, Mexico, online counseling, online therapy, Brian Dear, Jessica Rios, expert, new media, psychological services, New York" }/
+  - @title ="iCouch Media Relations"
+  %title =@title
+
+%section#static_content
+  %header
+    %h1 Media Relations
+
+  %article.policy.copy
+    %p
+      Are you a journalist looking for more information about the exciting area
+      of online counseling?  Our iCouch counselors and executive team are
+      available for interviews regarding iCouch.me specifically or online
+      counseling and new media psychological services in general. We are glad to
+      contribute our expertise toward your stories.
+
+    %p
+      You can contact CEO Brian Dear directly at #{mail_to 'brian@iCouch.me'}
+      with any media requests.
+
+    %p
+      For Spanish-language media, Cofounder and Head Psychologist Jessica Rios is
+      fluent in both Spanish and English and can accommodate your requests.
+      Contact her at #{mail_to 'jessica@iCouch.me'}.
+
+    %p
+      If you are on deadline, you can reach Brian directly at 646.468.0654 (New York) or
+      leave a voicemail at 202.642.2742. All messages will be
+      returned immediately or within the shortest possible interval.
+
+    %p
+      For general background information about iCouch.me, you are encouraged to
+      read our #{link_to"About Us.", href="about_us"} page. For more information
+      about iCouch or counseling, including research citations, visit the
+      #{link_to"iCouch Lounge.", href="the_lounge"}.
+
+    %p Our executive offices are located at 483 Broadway, New York, NY.
+
+    %h3 Your therapy. Your couch. iCouch.

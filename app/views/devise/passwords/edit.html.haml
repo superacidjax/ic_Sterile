@@ -1,0 +1,11 @@
+%hgroup
+  %h1 Forgot Password
+
+= fancy_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {:method => :put}) do |f|
+  = devise_error_messages!
+  %fieldset
+    = f.hidden_field :reset_password_token
+    = f.dl_input :password_field, :password
+    = f.dl_input :password_field, :password_confirmation
+  %fieldset.actions
+    %input(type="submit" value="Change My Password")

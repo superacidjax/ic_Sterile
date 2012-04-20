@@ -1,0 +1,1 @@
+SITEMAP_PATH="https://s3.amazonaws.com/icouchproduction/sitemaps/sitemap_index.xml.gz"

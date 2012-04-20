@@ -1,0 +1,24 @@
+- content_for :head do
+  %meta{:name => "description", :content => "How can iCouch online therapy help my depression?"}/
+  %meta{:name => "keywords", :content => "counseling, online therapy, therapy, depression" }/
+  - @title ="iCouch | Depression"
+  %title =@title
+
+%section#static_content
+  %header
+    %h1 Depression
+  %article.copy
+    %h2 Do you feel blue?
+    %p
+      Depression is one of the most common mood disorders. We all feel depressed from time to time. It's normal. However, when depression begins to interfere with your life, it's a good idea to talk to a professional therapist. Sometimes depression can be so severe as to require medication, however medication is only one tool to treat depression. Great therapy is a powerful arrow in your wellness quiver!
+    %p
+      If you think you might be depressed, an iCouch therapist can help. Perhaps you're just under a lot of stress or maybe you're dealing with a significant life change.. Even a lack of sleep can cause depression. Meeting with an iCouch therapist can help you figure out the possible causes to your depression and make a plan to help yourself. You might need medication, you might not -- a qualified therapist can help you figure it all out.
+    %p
+      For your first session, your iCouch therapist will spend much of the time learning about you. They'll ask questions, sometimes very personal ones designed to help understand your situation and your personality. While it seems all therapists do is ask questions, those questions also serve to help you understand yourself. Your therapist will then help you create a plan to help yourself. Some therapists like to assign "homework." For example, many iCouch therapists suggest you use the #{link_to "iCouch CBT iPhone app", "http://itunes.apple.com/us/app/icouch-cbt/id446115508?mt=8"} to track your situations throughout the week. Other therapists might ask you to keep a personal journal and explore your thoughts. The important thing is that you develop a trusting relationship with you therapist to get the maximum benefit.
+    %p
+      Even if you are not clinically depressed, an iCouch online therapy session can really help! Sometimes it just takes the non-judgmental and professional advice of therapist to help you figure out what's behind your feelings. While talking to a good friend is helpful, sometimes those friends are too close to you to be able to offer objective advice. They might be well meaning, but a professional therapist is trained to help people just like you!
+    %p
+      To learn more about iCouch online therapy and therapy in general, please visit the #{link_to "iCouch Lounge", the_lounge_path}. Here you'll find frequently asked questions, an explanation of therapy styles and other great information. You're also invited to read the #{link_to "iCouch Blog", "http://blog.icouch.me/"} where you can find helpful information on all sorts of mental health and wellness topics.
+%section#home
+  = render partial: 'dashboards/search'
+  %hr

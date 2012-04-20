@@ -1,0 +1,14 @@
+development: &development
+  adapter: postgresql
+  database: icouch_development
+
+production:
+  <<: *development
+
+staging:
+  <<: *development
+
+test: &test
+  adapter: postgresql
+  database: icouch_test
+  min_messages: warning

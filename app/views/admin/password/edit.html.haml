@@ -1,0 +1,12 @@
+%section
+  %header
+    %h1 Change admin password
+  = form_for current_user, url: admin_password_path, html: {id: 'password',class: 'standard'} do |f|
+    %fieldset
+      %dl
+        %dt= f.label :password, "New password"
+        %dd= f.password_field :password
+        %dt= f.label :password_confirmation, "Confirm password"
+        %dd= f.password_field :password_confirmation
+    %fieldset.actions
+      = f.submit "Save"

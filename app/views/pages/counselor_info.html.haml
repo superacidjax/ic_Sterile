@@ -1,0 +1,43 @@
+- content_for :head do
+  %meta{:name => "description", :content => "Are you a licensed counselor? Join the best online counseling platform ever created. iCouch handles everything: billing, scheduling and finding clients -- you just conduct your sessions!"}/
+  %meta{:name => "keywords", :content => "counseling, online counseling, online therapy, counselors, psychologists, counseling jobs, therapist jobs, independent contractor, mental health, work from home, licensed counselor, psychotherapists, psychology jobs, e-therapy jobs" }/
+  - @title ="Become an iCouch Counselor"
+  %title =@title
+  
+%section#static_content
+  %header
+    %h1 Become an iCouch Counselor
+  %article.policy.copy
+    %h3
+      = link_to "Sign up now!", new_counselor_account_path
+    %p Are you ready to start an online counseling practice? Do you think you have what it takes to provide services to clients from multiple cultures from around the US and the world? Are you tired of that uncomfortable feeling you get when you have a past due client and she just finished explaining how her life is seemingly falling apart? Do you want to save money on office overhead, marketing, utilities and fancy office furniture? Do you want to be on the cutting edge of psychological services? Yes? Then iCouch is the place for you.
+
+    %h2 iCouch makes online counseling easy for both you and the client.
+
+    %p All you do is open Skype and start your session. It's easy. When a client books a session with you, you'll get an email with the appointment time and your client's Skype ID. Using the online document service #{link_to "Right Signature", 'http://rightsignature.com/p/BD'}, you can even have your client sign Informed Consent documents completely online -- they're legally binding and secure. iCouch never has access to any of your client's treatment records -- your relationship with your client is your own -- iCouch simply handles the billing and scheduling along with other housekeeping tasks. You're an independent contractor. You don't work for iCouch -- in fact, we work for you!
+
+    %h2 Set your own session rates.
+
+    %p You can set your own rate for your sessions. All sessions are 50 minutes. iCouch collects the money from the client and pays you directly. iCouch keeps $10 as a commission. From that $10 we pay the credit card proccessing fees and keep iCouch running smoothly -- all you do is conduct your sessions and get paid. We usually send your payments within a few days, but sometimes it can take up to 1 week depending on the banks.
+
+    %h2 You get a public profile page.
+
+    %p All iCouch therapists get a public profile page that you can link to directly. You can send clients directly to your page for them to see your online schedule and book an appointment. Why use your time trying to figure out web development and managing your content. iCouch gives you a professional image -- all you have to do it be ready to conduct your sessions!
+
+    %h2 iCouch has high standards.
+
+    %p On some online counseling platforms, anyone can sign up as a "counselor." Most of our competitors don't check credentials, verify degrees or do any sort of background checks. We do. We have a promise to fulfill to clients -- the promise that they will only find qualified professionals on iCouch.me. We promise them quality and we hold that to be among our highest responsibilities. That being said, all counselors are screened before they're approved to be a part of the iCouch network. This ensures that you will be in good company. You can be proud of your iCouch affiliation because not just any counselor can make the cut. We also have a #{link_to "strong ethical code", ethical_code_path}. We're proud of our level of responsibility in ensuring that clients are protected and counselors are of the highest character. We built the company around it!
+
+    %h2 Need training in Online Therapy?
+
+    %p While online therapy is very similar to in-person therapy, there are some unique aspects of online therapy with which you should be comfortable. We recommend training from the #{link_to "Online Therapy Institute", "http://www.1shoppingcart.com/app/?af=1437080"}. They have some great tools and publications to help you develop and maintain your online therapy competence as well as earn Continuing Education credits.
+
+    %h2 What are you waiting for?
+
+    %h2
+      = link_to "Sign up now!", new_counselor_account_path
+      
+    %h2
+      Have more questions?
+      = link_to "Visit the iCouch Counselor Lounge", counselor_lounge_path
+    %h3 Your therapy. Your couch. iCouch.

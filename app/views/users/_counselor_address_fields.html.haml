@@ -1,0 +1,9 @@
+= form.dl_input :select, :country, COUNTRIES, {:include_blank => true}, :class => 'country'
+= form.dl_input :time_zone_select, :time_zone, nil, :include_blank => true
+= form.dl_input :text_field, :city
+%dl{:class => ('error' if form.object.errors[:state_or_province].any?)}
+  %dt= form.label_with_error :state_or_province
+  %dd
+    = form.text_field :state_or_province, :class => 'province'
+    = form.select :state_or_province, US_STATES, {:include_blank => true}, :class => 'state', :disabled => true, :style => 'display: none'
+= form.dl_input :text_field, :postal_code, :class => 'small'

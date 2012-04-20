@@ -1,0 +1,1380 @@
+@import "mixins"
+@import "common"
+
+form#counselor_search
+  background: #EEE9E9
+  border: 1px solid #e0e0de
+  padding: 4px
+  +border-radius(5px)
+  background: #eaf4f6
+  font-weight: 300
+  font-size: 18px
+  margin-top: 25px
+  padding: 20px 10px 20px 10px
+
+hgroup.bordered
+  clear: both
+  border-top: 3px solid #e0e0de
+  border-bottom: 1px solid #e0e0de
+  padding: 1px 0 10px 0
+  h1, h2
+    border-top: 1px solid #e0e0de
+    font-size: 10px
+    padding-top: 10px
+    text-transform: uppercase
+    letter-spacing: 1px
+
+p.go_back
+  font-weight: bold
+  margin: 20px 0 10px 0
+
+nav.block_nav
+  overflow: hidden
+  padding-bottom: 4px
+  ul
+    li
+      float: left
+      margin: 0 1px 0 0
+      a
+        display: block
+        background: #cbcbcb
+        padding: 6px 10px
+        color: #fff
+        text-decoration: none
+        font-weight: bold
+      &.active
+        a
+          position: relative
+          background: #b13b89
+          &:after
+            content: ""
+            position: absolute
+            margin-left: -4px
+            left: 50%
+            top: 100%
+            height: 4px
+            width: 8px
+            background: url(/images/bg_block-nav_active.png)
+
+ul.standard
+  margin: 0 0 20px 0
+  li
+    border-bottom: 1px dotted #e0e0de
+    padding: 10px 20px
+    overflow: hidden
+    img
+      float: left
+      border: 1px solid #e0e0de
+      padding: 4px
+      margin: 0 20px 0 0
+    > p
+      float: right
+      a
+        color: #b8af48
+    > dl, > div
+      float: left
+      margin: 8px 0 0 0
+    > dl
+      dt
+        font-size: 10px
+        letter-spacing: 1px
+        font-family: georgia
+        color: #999
+        text-transform: uppercase
+        margin: 0 0 2px 0
+      dd
+        font-size: 14px
+  &.people
+    li
+      padding: 20px
+      .details
+        width: 170px
+        padding-right: 20px
+        h2
+          font-size: 18px
+          a
+            text-decoration: none
+            border-bottom: 2px solid #0183a3
+            &:hover
+              border-color: #7ac6c8
+          & + p
+            padding: 10px 0
+            span
+              color: #999
+        a.button
+          float: left
+      dl
+        width: 360px
+        line-height: 22px
+        dd
+          font-size: 12px
+          a
+            font-weight: bold
+      > p
+        line-height: 200%
+        margin-top: 9px
+
+
+dl.standard
+  line-height: 22px
+  dt
+    font-size: 10px
+    letter-spacing: 1px
+    font-family: georgia
+    color: #999
+    text-transform: uppercase
+    margin: 0 0 2px 0
+
+form
+  fieldset
+    h1
+      clear: both
+      font-size: 20px
+      border-bottom: 1px solid #e0e0de
+      padding: 0 0 5px 0
+      margin: 20px 0
+    h2
+      clear: both
+      font-size: 14px
+      margin: 0 0 20px 20px
+    &.actions
+      line-height: 32px
+      a
+        color: #b3ab3c
+      input[type="submit"]
+        +button
+        float: left
+        margin: 0 20px 0 0
+  &.standard
+    fieldset
+      dl
+        clear: both
+        dt
+          width: 140px
+          clear: left
+          float: left
+          text-align: right
+          margin: 0 20px 0 0
+          label
+            line-height: 28px
+        dd
+          float: left
+          margin: 0 0 20px 0
+          select
+            margin: 5px 0 0 0
+          input[type="text"],
+          input[type="password"],
+          input[type="email"],
+          input[type="tel"]
+            +input
+          a
+            margin: 0 0 0 10px
+          > ul
+            margin: 6px 0 0 0
+            li
+              padding: 2px 0
+              input[type="radio"]
+                margin: 0 5px 0 0
+          textarea
+            +textarea
+            & + p
+              color: #999
+              font-size: 11px
+          &.checkboxes
+            ul
+              li
+                width: 220px
+                float: left
+                margin: 0 10px 5px 0
+            > label
+              clear: both
+              display: block
+            textarea
+              margin: 0
+      label.checkbox
+        clear: both
+        display: block
+        margin: 0 0 20px 160px
+        input[type="checkbox"]
+          margin: 0 5px 0 0
+    fieldset.actions
+      margin: 0 0 0 160px
+      p.privacy
+        padding: 0 0 0 20px
+        font-size: 10px
+        color: #999999
+        background: transparent url("/images/icon_lock.png") 0 45% no-repeat
+
+section#headline
+  h1
+    font-weight: 300
+    font-size: 48px
+    padding: 25px 0 0 0
+    text-align: left
+  h2
+    font-weight: 400
+    font-family: "grad", serif
+    font-size: 26px
+    font-style: italic
+    margin-top: 25px
+    padding: 10px 10px 10px 10px
+    text-align: center
+  h3
+    font-weight: 400
+    font-size: 18px
+    text-align: right
+    margin-right: 300px
+  ul
+    padding-top: 48px
+    li
+      font-weight: 400
+      font-size: 18px
+      float: right
+      width: 300px
+      text-align: left 
+      padding: 12px 5px 12px 5px
+      margin-left: 9px
+
+section#sign_up, section#edit_preferences
+  booking
+    h1
+      font-weight: 400
+      font-size: 22px
+      margin-top: 25px
+      padding: 10px 10px 10px 10px
+      text-align: left
+
+    confirmation
+      width: 920px
+      h2
+        border: 1px solid #e0e0de
+        padding: 4px
+        +border-radius(5px)
+        background: #eaf4f6
+        float: left
+        font-weight: 300
+        font-size: 18px
+        margin-top: 25px
+        padding: 10px 10px 10px 10px
+        text-align: left
+
+
+  fieldset
+    &.session_preferences
+      dl
+        padding: 0 0 0 120px
+        dt
+          width: auto
+          float: none
+          margin: 0 0 5px 0
+          text-align: left
+          font-size: 130%
+        dd
+          float: none
+          margin: 0 0 20px 20px
+    &.preferred_appointment_times
+      dd
+        label
+          display: none
+    &.professional_information
+      dl
+        padding: 0 160px
+        dt
+          float: none
+          width: auto
+          text-align: left
+          margin: 0 0 5px 0
+          line-height: 160%
+        dd
+          float: none
+          ul
+            li
+              .details
+                margin: 10px 20px
+                label, input
+                  width: auto
+                  display: block
+                  float: none
+                label
+                  font-size: 11px
+                  font-weight: bold
+                  margin: 0 0 2px 0
+                input
+                  margin: 0 0 10px 0
+section#dashboard
+  h2
+    font-weight: 300
+    font-size: 18px
+    padding: 25px 0 50px 35px
+    text-align: left
+  width: 920px
+  > article
+    width: 920px
+    float: left
+    ul.standard
+      li
+        dl
+          &.session
+            width: 180px
+          &.date
+            padding-right: 20px
+            border-right: 1px dotted #e0e0de
+          &.time
+            width: 250px
+            padding-left: 20px
+            padding-right: 20px
+            border-right: 1px dotted #e0e0de
+          &.start_session
+            padding-left: 20px
+          
+        p
+          padding: 23px 0 0 0
+  > section
+    padding: 100px 0 0 0
+    width: 500px
+    float: right
+    hgroup.bordered
+      margin: 0 0 20px 0
+    article
+      p
+        line-height: 20px
+        margin: 0 0 20px 0
+      &.credits
+        margin: 0 0 20px 0
+        hgroup.bordered
+          margin-bottom: 10px
+        p
+          font-weight: bold
+          line-height: 38px
+          width: 300px
+          margin: 0 0 10px 0
+          + p
+            line-height: 20px
+            font-weight: normal
+            &:last-of-type
+              text-align: center
+            a.button
+              margin: 0 0 10px 0
+          span
+            font-weight: normal
+            display: block
+            float: left
+            color: #fff
+            font-size: 26px
+            font-weight: 200
+            padding: 0 8px
+            margin: 0 5px
+            background: #333
+            +border-radius(5px)
+      &.whats-next
+        a
+          font-weight: bold
+
+section#client_counselors_search    
+  header
+    padding: 35px 0 20px 0
+    margin: 0
+    width: auto
+    h1, h2
+      background: none
+      color: #3f3d32
+      float: none
+    h1
+      font-weight: 300
+      font-size: 56px
+      padding: 0 0 0 0
+      text-align: left
+    h2
+      font-weight: 300
+      font-size: 18px
+      padding: 0px 0 36px 35px
+      text-align: left
+    h3
+      font-weight: 300
+      font-size: 18px
+      margin-top: 0px
+      padding: 8px 0 0 0 
+      width: 800px
+    h4
+      font-weight: 300
+      font-size: 20px
+      margin-top: 0px
+      padding: 12px 0 12px 0 
+      width: 800px
+      text-align: center
+    h5
+      font-weight: 300
+      
+      font-size: 16px
+      margin-top: 0px
+      padding: 8px 36px 12px 0 
+      width: 600px
+      text-align: right
+  tips
+    h2
+      font-weight: 300
+      
+      padding: 0 0 12px 0
+      font-size: 18px
+    h4
+      font-weight: 400
+      margin-top: 100px
+      padding: 36px 0 0 0 50px
+      font-size: 18px
+    ul
+      li
+        font-weight: 300
+        font-size: 16px
+        float: right
+        width: 300px
+        text-align: left 
+        padding: 12px 5px 5px 5px
+        margin-left: 9px
+    p
+      padding: 25px
+      text-align: center
+      float: left
+      width: 920px
+      color: #b43c84
+      span
+        font-weight: bold
+        color: #0c4556
+        text-transform: uppercase
+        letter-spacing: 1px
+
+  form
+    p
+      &.time
+        border-bottom: 1px solid #e0e0de
+        padding: 25px 0 25px 97px
+        background: url(/images/icon_calendar_72x72.png) 10px center no-repeat
+        font-size: 14px
+        strong
+          display: block
+          font-size: 26px
+          font-weight: normal
+          margin: 3px 0 0 0
+          small
+            font-size: 12px
+            color: #999
+      & + p
+        font-size: 26px
+        padding: 10px
+    fieldset.actions
+      padding: 0 0 0 10px
+      input
+        display: inline
+        margin: 0 10px 0 0
+
+section#client_counselors_show
+  p.go_back
+    font-weight: bold
+    margin: 20px 0 10px 0
+  > article
+    position: relative
+    &.copy
+      clear: both
+      padding: 0 0 20px 190px
+    > h1
+      font-size: 30px
+      color: #333
+      padding: 25px 0 10px 190px
+    img
+      position: absolute
+      left: 20px
+      top: 20px
+      float: left
+      border: 1px solid #e0e0de
+      padding: 4px
+    dl.standard
+      float: left
+      min-height: 150px
+      padding: 0 20px 0 190px
+      width: 300px
+      & + dl
+        float: right
+        width: 290px
+        padding: 0
+      dd
+        margin: 0 0 20px 0
+    hgroup + hgroup
+      text-align: center
+      padding: 20px 0 10px 0
+      h2
+        text-align: left
+        font-size: 20px
+      h3
+        font-size: 20px
+        color: #b43c84
+      h4
+        font-size: 10px
+        font-weight: normal
+      p
+        text-align: right
+    nav
+      height: 0
+      ul
+        li
+          position: absolute
+          font-weight: bold
+          color: #c8c8c8
+          text-decoration: underline
+          left: 0
+          margin-top: -35px
+          & + li
+            left: auto
+            right: 0
+    > ul
+      > li
+        float: left
+        width: 119px
+        margin: 0 0 40px 0
+        & + li
+          margin: 0 0 0 1px
+        &.not_available
+          header
+            background: #e3e6df
+            border-color: #e3e6df
+        header
+          padding: 15px 0
+          text-align: center
+          border: 1px solid #cdcdcd
+          font-size: 10px
+          h5
+            font-size: 14px
+          strong
+            display: block
+            font-size: 14px
+        ul
+          li
+            margin: 1px 0
+            input.button
+              width: 100%
+              font-size: 12px
+              line-height: 22px
+              +border-radius(5)
+            .booked
+              color: #3f3d32
+              background: #e3e6df
+              border-color: #ccc
+
+section#client_counselors
+  h3
+    font-weight: 300
+    font-size: 18px
+    margin-top: 0px
+    padding: 8px 0 0 0 
+    width: 800px
+  
+section#counselor_sessions
+  ul.standard
+    margin: 0 0 40px 0
+    li
+      dl
+        &.session
+          min-width: 340px
+        &.date
+          padding-right: 20px
+          border-right: 1px dotted #e0e0de
+        &.time
+          padding-left: 20px
+      p
+        padding: 23px 0 0 0
+
+section#counselor_clients_show
+  p.go_back
+    margin: 10px 0 30px 0
+  article
+    float: right
+    width: 650px
+    > h1
+      font-size: 30px
+      color: #333
+      padding: 5px 0 20px 0
+    hgroup.bordered
+      margin: 0 0 20px 0
+    dl
+      float: left
+      width: 33%
+      line-height: 22px
+      &.full
+        width: 100%
+      &.half
+        width: 300px
+        margin-right: 50px
+        & + dl.half
+          margin-right: 0
+      dt
+        font-size: 10px
+        letter-spacing: 1px
+        font-family: georgia
+        color: #999
+        text-transform: uppercase
+        margin: 0 0 2px 0
+      dd
+        margin-bottom: 30px
+    ul.availability
+      li
+        float: left
+        width: 92px
+        text-align: center
+        font-weight: bold
+        line-height: 170%
+        margin: 0 0 40px 0
+        & + li
+          margin-left: 1px
+        h3
+          background: #e2e6dd
+          padding: 10px 0
+          font-size: 14px
+          margin: 0 0 10px 0
+        span
+          display: block
+  aside
+    float: left
+    width: 150px
+    margin: 0 0 0 20px
+    img
+      border: 1px solid #e0e0de
+      padding: 4px
+      margin: 0 20px 10px 0
+    dl
+      margin: 0 0 0 10px
+      dt
+        position: relative
+        &:before
+          position: absolute
+          font-size: 20px
+          content: '•'
+          color: #cc0000
+          left: -13px
+          top: -1px
+      dd
+        strong
+          font-size: 16px
+          display: block
+
+section#home
+  social
+    float: right
+    text-align: right
+  header
+    padding: 35px 0 20px 0
+    margin: 0
+    width: auto
+    h1, h2
+      background: none
+      color: #3f3d32
+      float: none
+    h1
+      font-weight: 300
+      font-size: 56px
+      padding: 25px 0 0 35px
+      float: left
+      text-align: left
+      width: 400px
+    h2
+      font-weight: 300
+      font-size: 18px
+      float: left
+      padding: 0px 0 50px 35px
+      text-align: center
+      width: 400px
+      a
+        border: 1px solid #d4e9ee
+        -moz-border-radius: 5px
+        border-radius: 5px
+        background: #C43B84
+        font-weight: 300
+        color: #FFF
+        font-size: 21px
+        padding: 4px 8px 4px 8px
+        text-align: right
+        text-transform: uppercase
+        text-decoration: none
+      a:hover
+        border: 1px solid #C43B84
+        -moz-border-radius: 5px
+        border-radius: 5px
+        background: #d4e9ee
+        font-weight: 300
+        color: #0b4654
+        font-size: 21px
+        padding: 4px 8px 4px 8px
+        float: right
+        text-align: right
+        width: auto
+        text-transform: uppercase
+        text-decoration: none
+    h3
+      font-weight: 300
+      font-size: 18px
+      text-transform: uppercase
+      margin-top: 24px
+      padding: 0
+      float: right
+      width: 450px
+    ul
+      li
+        font-weight: 400
+        font-size: 18px
+        float: right
+        width: 300px
+        text-align: left 
+        padding: 5px
+        margin-left: 9px
+    p
+      padding: 25px
+      text-align: center
+      float: left
+      width: 920px
+      span
+        font-weight: bold
+        color: #0c4556
+        text-transform: uppercase
+        letter-spacing: 1px
+      a
+        display: inline
+        float: none
+        font-size: 18px
+        padding: 18px 20px 16px 20px
+        margin: 0 10px 0 0
+  article
+    h1
+      font-size: 18px
+      padding: 20px 0
+    ul
+      li
+        float: left
+        width: 270px
+        margin-left: 50px
+        & + li
+        
+          margin-left: 36px
+        p
+          line-height: 18px
+          font-size: 14px
+          font-weight: normal
+          padding-top: 3px
+          & + p
+            font-size: 12px
+            font-weight: normal
+  story
+    jesimage
+      width: 300px
+      float: left
+      margin-left: 100px
+      jescaption
+        h3
+          font-weight: 300
+          font-size: 14px
+          text-transform: uppercase
+          margin-top: 8px
+          text-align: center
+    text
+      width: 490px
+      float: right
+      h1
+        font-weight: 300
+        font-size: 48px
+        padding: 50px 0 0 0
+        text-align: left
+        float: left
+      h2
+        font-weight: 300
+        font-size: 24px
+        float: left
+        padding: 36px 0 0 0
+        text-align: left
+      p
+        line-height: 18px
+        font-size: 14px
+        font-weight: normal
+        padding-top: 3px
+        float: left
+  cbtstory
+    cbtimage
+      width: 300px
+      float: right
+      margin-right: 100px
+    text
+      width: 490px
+      float: left
+      h1
+        font-weight: 300
+        font-size: 48px
+        padding: 50px 0 0 0
+        text-align: left
+        float: left
+      h2
+        font-weight: 300
+        font-size: 28px
+        padding: 18px 0 0 40px
+        text-align: left
+        clear: both
+      h3
+        font-weight: 300
+        font-size: 24px
+        padding: 18px 40px 0 0
+        text-align: right
+        clear: both
+      h4
+        font-weight: 300
+        font-size: 24px
+        float: left
+        padding: 36px 0 45px 0
+        text-align: left
+      h5
+        float: right
+        margin-top: 80px
+        clear: both
+        text-align: right
+        &:hover
+          padding: 5px
+          border: 2px solid #B43C84
+          +border-radius(15px)
+      p
+        line-height: 18px
+        font-size: 14px
+        font-weight: normal
+        padding-top: 18px
+        float: left
+      
+section#clientprofiles
+  social
+    float: right
+    text-align: right
+  header
+    photo
+      float: right
+    padding: 35px 0 20px 0
+    margin: 0
+    width: auto
+    h1, h2
+      background: none
+      color: #3f3d32
+      float: none
+    h1
+      font-weight: 300
+      font-size: 56px
+      padding: 0 0 0 0
+      float: left
+      text-align: left
+      width: auto
+    h2
+      font-weight: 300
+      font-size: 32px
+      margin-left: 0px
+      padding: 0px 0 50px 45px
+      text-align: center
+      float: left
+      a
+        border: 1px solid #d4e9ee
+        -moz-border-radius: 5px
+        border-radius: 5px
+        background: #c43b84
+        font-weight: 300
+        color: white
+        font-size: 21px
+        padding: 4px 8px 4px 8px
+        float: right
+        text-align: right
+        width: auto
+        text-transform: uppercase
+        text-decoration: none
+      a:hover
+        border: 1px solid #c43b84
+        -moz-border-radius: 5px
+        border-radius: 5px
+        background: #d4e9ee
+        font-weight: 300
+        color: #0b4654
+        font-size: 21px
+        padding: 4px 8px 4px 8px
+        float: right
+        text-align: right
+        width: auto
+        text-transform: uppercase
+        text-decoration: none
+    h3
+      font-weight: 300
+      font-size: 18px
+      margin-top: 24px
+      padding: 0
+      float: left
+      width: 300px
+        
+    h4
+      font-weight: 300
+      font-size: 16px
+      margin-top: 24px
+      padding: 0
+      float: left
+      width: 300px
+    ul
+      li
+        font-weight: 400
+        font-size: 18px
+        float: right
+        width: 300px
+        text-align: left 
+        padding: 5px
+        margin-left: 9px
+    p
+      padding: 25px 0 0 0
+      text-align: left
+      float: left
+      width: 300px
+      span
+        font-weight: bold
+        color: #0c4556
+        text-transform: uppercase
+        letter-spacing: 1px
+      a
+        display: inline
+        float: none
+        font-size: 18px
+        padding: 18px 20px 16px 20px
+        margin: 0 10px 0 0
+    photo
+      float: right
+  
+  article
+    h1
+      font-size: 18px
+      padding: 20px 0
+    h3
+      font-weight: 300
+      font-size: 18px
+      margin-top: 24px
+      padding: 0
+      width: 450px
+    h4
+      font-weight: 300
+      font-style: italic
+      font-size: 18px
+      margin-top: 24px
+      padding: 0
+      width: 450px
+    profilesleft
+      float: left
+      h1
+        font-size: 18px
+        padding: 25px 0 0 0
+      h3
+        font-weight: 300
+        font-size: 18px
+        margin-top: 12px
+        padding: 0
+        width: 450px
+      h4
+        font-weight: 300
+        font-style: italic
+        font-size: 18px
+        margin-top: 24px
+        padding: 0
+        width: 450px
+    profilesright
+      float: right
+      h1
+        font-size: 18px
+        padding: 25px 0 0 0
+      h3
+        font-weight: 300
+        font-size: 18px
+        margin-top: 12px
+        padding: 0
+        width: 450px
+      h4
+        font-weight: 300
+        font-style: italic
+        font-size: 18px
+        margin-top: 24px
+        padding: 0
+        width: 450px
+    findhelp
+      padding: 25px 200px 0 0
+      float: right
+      clear: both
+      h1
+        a
+          border: 1px solid #d4e9ee
+          -moz-border-radius: 5px
+          border-radius: 5px
+          background: #c43b84
+          font-weight: 300
+          color: white
+          font-size: 21px
+          padding: 4px 8px 4px 8px
+          float: right
+          text-align: right
+          width: auto
+          text-transform: uppercase
+          text-decoration: none
+        a:hover
+          border: 1px solid #c43b84
+          -moz-border-radius: 5px
+          border-radius: 5px
+          background: #d4e9ee
+          font-weight: 300
+          color: #0b4654
+          font-size: 21px
+          padding: 4px 8px 4px 8px
+          float: right
+          text-align: right
+          width: auto
+          text-transform: uppercase
+          text-decoration: none
+      
+    ul
+      li
+        float: left
+        width: 270px
+        margin-left: 50px
+        & + li
+        
+          margin-left: 36px
+        p
+          line-height: 18px
+          font-size: 14px
+          font-weight: normal
+          padding-top: 3px
+          & + p
+            font-size: 12px
+            font-weight: normal
+  story
+    jesimage
+      width: 300px
+      float: left
+      margin-left: 100px
+      jescaption
+        h3
+          font-weight: 300
+          font-size: 14px
+          text-transform: uppercase
+          margin-top: 8px
+          text-align: center
+    text
+      width: 490px
+      float: right
+      h1
+        font-weight: 300
+        font-size: 48px
+        padding: 50px 0 0 0
+        text-align: left
+        float: left
+      h2
+        font-weight: 300
+        font-size: 24px
+        float: left
+        padding: 36px 0 0 0
+        text-align: left
+      p
+        line-height: 18px
+        font-size: 14px
+        font-weight: normal
+        padding-top: 3px
+        float: left
+
+      
+#static_content
+  feed
+    h1
+      font-weight: 300
+      font-size: 24px
+      padding: 25px 0 0 12px
+      text-align: center
+      +border-radius(5px)
+      background: #eaf4f6
+      overflow: hidden
+  article.copy
+    padding: 0 40px
+
+section#counselor_dashboard
+  width: 920px
+  form
+    p
+      color: #333333
+      float: left
+      text-align: left
+      margin-bottom: 5px
+    .default
+      label
+        color: #4b493d
+        float: right
+        text-align: right
+        input
+          margin-right: 5px
+    ul.weekdays
+      clear: both
+      margin-bottom: 24px
+      overflow: hidden
+      li
+        width: 119px
+        text-align: center
+        background: #e2e6dd
+        float: left
+        border-top: 1px solid #dddddd
+        border-left: 1px solid #fff
+        a
+          display: block
+          width: 89px
+          padding: 15px
+          font-size: 10px
+          color: #666666
+          background: transparent url("/images/bg_nav-shadow.png") 0 100% repeat-x
+          text-decoration: none
+          h4
+            font-weight: bold
+            font-size: 14px
+            strong
+              display: block
+              font-weight: bold
+              font-size: 18px
+      li.active
+        a
+          background: #fff
+          color: #333333
+    fieldset.times
+      margin: auto
+      width: 636px
+      margin-bottom: 30px
+      p, a
+        font-weight: bold
+      a
+        float: right
+      ul
+        clear: both
+        li
+          float: left
+          width: 105px
+          margin: 0 1px 1px 0
+          color: #999999
+          font-weight: bold
+          &.checked
+            color: #fff
+            label
+              background: #b33c85
+          label
+            display: block
+            padding: 7px
+            background: #e2e6dd
+          input
+            margin-right: 5px
+    fieldset.actions
+      border-top: 1px solid #dddddd
+      padding: 15px 0 0 0
+
+
+section#video
+  background: #000
+  width: 920px
+  object
+    float: left
+
+  a
+    color: #0099CC
+    text-decoration: none
+    &:visited
+      color: #0099CC
+      text-decoration: none
+    &:hover
+      text-decoration: underline
+
+  #opentok_console
+    float: right
+    width: 920px
+    font-size: 12px
+
+  #links
+    float: top
+    a
+      display: none
+
+  input
+    display: none
+
+  #sessionControls
+    float: top
+
+  #pubControls input
+    display: inline
+
+  #publishForm, #deviceManagerControls
+    font-size: 14px
+
+  #action a
+    display: none
+
+  #localview
+    float: left
+    width: 250px
+
+  div.controls
+    width: 220px
+    padding: 10 0 10 0
+    font-size: 14px
+
+  .videobar
+    float: top
+
+  .videobar-left
+    float: left
+    width: 250px
+
+  .smalltype
+    font-size: 80%
+    padding-bottom: 6px
+
+  .description
+    font-size: 90%
+    padding-top: 6px
+
+  #controls
+    float: left
+    text-align: left
+    padding-right: 10px
+
+  #publisherControls, #push-to-talk
+    display: none
+
+  #devicePanelContainer
+    position: absolute
+    left: 250px
+    top: 10px
+    display: none
+
+  #devicePanelCloseButton
+    position: relative
+    z-index: 10
+    margin-left: 285px
+    margin-right: 12px
+    padding: 3px
+    text-align: center
+    font-size: 11px
+    background-color: lightgrey
+
+  #devicePanelBackground
+    background-color: lightgrey
+    width: 340px
+    height: 230px
+
+  #devicePanelInset #devicePanel
+    position: relative
+    top: -74px
+    left: -9px
+
+  a.settingsClose
+    &:link, &:visited, &:hover
+      text-decoration: none
+      cursor: pointer
+
+  table
+    clear: both
+
+  td
+    vertical-align: top
+    padding-right: 15px
+  #myCamera.publisherContainer
+    width: 920px
+  .publisherContainer
+    float: left
+    width: 920px
+
+  .subscriberContainer
+    width: 264px
+    margin-left: 4px
+    float: left
+
+  #login
+    background-color: #999
+    border: thin solid #000
+    width: 400px
+    padding: 5px
+    input
+      display: inline
+      border: thin solid #000
+
+  #connectionsContainer
+    clear: both
+    background-color: #CCC
+    width: 920px
+
+  .swfContainer
+    float: left
+    width: 320
+    margin-left: 5px
+
+  #recorderElement, #playerElement
+    clear: both
+    float: left
+
+section#book_appointment
+  padding: 35px 0 20px 0
+  margin: 0
+  width: auto
+  header
+  h1, h2
+    background: none
+    color: #3f3d32
+    float: none
+  h1
+    font-weight: 300
+    font-size: 56px
+    padding: 0 0 0 0
+    text-align: left
+  h2
+    font-weight: 300
+    font-size: 18px
+    padding: 0px 0 36px 35px
+    text-align: left
+  h3
+    font-weight: 300
+    font-size: 18px
+    margin-top: 0px
+    padding: 8px 0 0 0 
+    width: 800px
+  h4
+    font-weight: 300
+    font-size: 20px
+    margin-top: 0px
+    padding: 12px 0 12px 0 
+    width: 800px
+    text-align: center
+  h5
+    font-weight: 300
+    font-size: 16px
+    margin-top: 0px
+    padding: 8px 36px 12px 0 
+    width: 600px
+    text-align: right
+tips
+  h2
+    font-weight: 300
+    padding: 0 0 12px 0
+    font-size: 18px
+  h4
+    font-weight: 400
+    margin-top: 100px
+    padding: 36px 0 0 0 50px
+    font-size: 18px
+  ul
+    li
+      font-weight: 300
+      font-size: 16px
+      float: right
+      width: 300px
+      text-align: left 
+      padding: 12px 5px 5px 5px
+      margin-left: 9px
+  p
+    padding: 25px
+    text-align: center
+    float: left
+    width: 920px
+    color: #b43c84
+    span
+      font-weight: bold
+      color: #0c4556
+      text-transform: uppercase
+      letter-spacing: 1px

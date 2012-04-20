@@ -1,0 +1,11 @@
+%section
+  %header
+    %h1 Forgot Password
+
+= fancy_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, class:"standard" }) do |f|
+  = devise_error_messages!
+  %fieldset
+    = f.dl_input :email_field, :email
+  %fieldset.actions
+    %input(type="submit" value="Retrieve Password")
+    = link_to "Cancel", new_account_session_path

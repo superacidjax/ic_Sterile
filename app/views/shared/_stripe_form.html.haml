@@ -1,0 +1,17 @@
+%br
+  %p.payment-errors.field_error= flash[:payment_error]
+  %label Card Number
+  %input.card-number{autocomplete: "off", size: "20", type: "text"}
+%br
+.form
+  %label CVC
+  %input.card-cvc{autocomplete: "off", size: "4", type: "text"}
+%br
+.form
+  %label Expiration (MM/YYYY)
+  %input.card-expiry-month{size: "2", type: "text"}
+  %span /
+  %input.card-expiry-year{size: "4", type: "text"}
+%br
+%br
+%br

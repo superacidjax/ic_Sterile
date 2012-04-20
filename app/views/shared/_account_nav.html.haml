@@ -1,0 +1,10 @@
+%header
+  %h1 My Account
+%nav.block_nav
+  %ul
+    %li{class: active_if_matches(/account\/edit/)}
+      = link_to "Account", edit_client_account_path
+    %li{class: active_if_matches(/personal_information/)}
+      = link_to "Personal Information", edit_client_account_personal_information_path
+    %li{class: active_if_matches(/additional_information/)}
+      = link_to "Session Preferences", edit_client_account_additional_information_path

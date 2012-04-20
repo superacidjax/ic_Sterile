@@ -1,0 +1,317 @@
+/*
+ *RoyalSlider */
+.royalSlider {
+  position: relative;
+  /* set width and height of slider here, in px, % or em */
+  width: 100%;
+  height: 440px;
+  /* Used to prevent content "jumping" on page load. this property is removed when javascript is loaded and slider is instanciated */
+  overflow: hidden; }
+  .royalSlider .royalWrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%; }
+  .royalSlider .royalSlide, .royalSlider .royalWrapper {
+    /* Bakground behind slides */
+    background: white; }
+  .royalSlider .royalSlidesContainer {
+    position: relative;
+    left: 0;
+    top: 0 !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important; }
+  .royalSlider .royalSlide {
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    list-style: none !important;
+    position: relative;
+    float: left;
+    overflow: hidden; }
+  .royalSlider .arrow {
+    /*background:url(../img/controlsSprite.png) no-repeat 0 0; */
+    background-color: #cc0000;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    /* change arrows size here */
+    width: 45px;
+    height: 90px;
+    top: 50%;
+    margin-top: -45px;
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    z-index: 25; }
+    .royalSlider .arrow.left {
+      background-position: top left;
+      left: 0; }
+    .royalSlider .arrow.right {
+      background-position: top right;
+      right: 0; }
+  .royalSlider .royalControlNavOverflow {
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    margin-top: -20px;
+    z-index: 25; }
+  .royalSlider .royalControlNavCenterer {
+    float: left;
+    position: relative;
+    left: -50%; }
+  .royalSlider .royalControlNavContainer {
+    float: left;
+    position: relative;
+    left: 50%; }
+  .royalSlider .royalControlNavThumbsContainer {
+    left: 0;
+    position: relative; }
+  .royalSlider .thumbsAndArrowsContainer {
+    overflow: hidden;
+    width: 100%;
+    position: relative; }
+  .royalSlider .royalControlNavOverflow.royalThumbs {
+    width: auto;
+    position: relative;
+    overflow: hidden;
+    margin-top: 4px; }
+  .royalSlider .royalControlNavOverflow a {
+    background: #00cc00 none no-repeat scroll 0 0;
+    width: 20px;
+    height: 20px;
+    float: left;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    text-indent: -9999px; }
+    .royalSlider .royalControlNavOverflow a.current {
+      background-color: #5d939f; }
+    .royalSlider .royalControlNavOverflow a:hover {
+      background-color: #0000cc; }
+    .royalSlider .royalControlNavOverflow a.royalThumb {
+      /*background: none no-repeat 0 0; */
+      /*background-color: ; */
+      width: 144px;
+      height: 60px;
+      /* thumbnails spacing, use margin-right only */
+      margin-right: 4px; }
+      .royalSlider .royalControlNavOverflow a.royalThumb.current {
+        background-position: -3px -3px !important;
+        border: 3px solid #cc0000 !important;
+        width: 138px;
+        height: 54px; }
+      .royalSlider .royalControlNavOverflow a.royalThumb:hover {
+        background-position: -3px -3px;
+        border: 3px solid #0000cc;
+        width: 138px;
+        height: 54px; }
+  .royalSlider .thumbsArrow {
+    width: 38px;
+    height: 68px;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    z-index: 25;
+    background: #cc9999; }
+    .royalSlider .thumbsArrow.left {
+      float: left; }
+    .royalSlider .thumbsArrow.right {
+      float: right; }
+  .royalSlider .royalCaption {
+    z-index: 20;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100px; }
+    .royalSlider .royalCaption h1 {
+      font-weight: 300;
+      font-family: "myriad-pro", sans-serif;
+      font-size: 56px;
+      padding: 0 35px 0 0;
+      float: left;
+      text-align: right;
+      width: 920px; }
+    .royalSlider .royalCaption h2 {
+      font-weight: 300;
+      font-family: "myriad-pro", sans-serif;
+      font-size: 36px;
+      padding: 140px 35px 0 0;
+      float: left;
+      text-align: right;
+      width: 920px; }
+    .royalSlider .royalCaption h3 {
+      font-weight: 300;
+      font-family: "myriad-pro", sans-serif;
+      font-size: 24px;
+      padding: 200px 35px 0 0;
+      float: left;
+      text-align: right;
+      width: 920px; }
+    .royalSlider .royalCaption a {
+      border: 1px solid #c43b84;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      background: #eaf4f6; 
+      font-weight: 300;
+      color: #3f3d32;
+      font-family: "myriad-pro", sans-serif;
+      font-size: 21px;
+      padding: 4px 8px 4px 8px;
+      float: right;
+      text-align: right;
+      width: auto;
+      text-transform: uppercase;
+      text-decoration: none; }
+      .royalSlider .royalCaption a:hover {
+        border: 1px solid #c43b84;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        background: #d4e9ee;
+        font-weight: 300;
+        color: #0b4654;
+        font-family: "myriad-pro", sans-serif;
+        font-size: 21px;
+        padding: 4px 8px 4px 8px;
+        float: right;
+        text-align: right;
+        width: auto;
+        text-transform: uppercase;
+        text-decoration: none; }
+    .royalSlider .royalleftCaption a {
+      border: 1px solid #c43b84;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      background: #eaf4f6; 
+      font-weight: 300;
+      color: #3f3d32;
+      font-family: "myriad-pro", sans-serif;
+      font-size: 21px;
+      padding: 4px 8px 4px 8px;
+      float: right;
+      text-align: right;
+      width: auto;
+      text-transform: uppercase;
+      text-decoration: none; }
+      .royalSlider .royalleftCaption a:hover {
+        border: 1px solid #c43b84;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        background: #d4e9ee;
+        font-weight: 300;
+        color: #0b4654;
+        font-family: "myriad-pro", sans-serif;
+        font-size: 21px;
+        padding: 4px 8px 4px 8px;
+        float: right;
+        text-align: right;
+        width: auto;
+        text-transform: uppercase;
+        text-decoration: none; }
+  .royalSlider .royalleftCaptionItem {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0; }
+    .royalSlider .royalleftCaptionItem h1 {
+      font-weight: 300;
+      font-family: "myriad-pro", sans-serif;
+      font-size: 56px;
+      padding: 50px 0 0 35px;
+      float: left;
+      text-align: left;
+      width: 400px; }
+  .royalSlider .royalCaptionItem {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0; }
+    .royalSlider .royalCaptionItem h1 {
+      font-weight: 300;
+      font-family: "myriad-pro", sans-serif;
+      font-size: 56px;
+      padding: 50px 0 0 35px;
+      float: left;
+      text-align: left;
+      width: 400px; }
+  .royalSlider .royalLoadingScreen {
+    background: white;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 99; }
+    .royalSlider .royalLoadingScreen p {
+      width: 100%;
+      position: absolute;
+      margin: 0 auto;
+      top: 45%;
+      text-align: center; }
+  .royalSlider .royalPreloader {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 50%;
+    top: 50%;
+    margin-left: -12px;
+    margin-top: -12px;
+    z-index: 0;
+    background-image: url(../img/preloader.gif); }
+  .royalSlider .grab-cursor {
+    cursor: move;
+    cursor: url("/images/grab.png") 8 8, -moz-grab;
+    *cursor: url(../img/cursors/grab.cur); }
+  .royalSlider .grabbing-cursor {
+    cursor: move;
+    cursor: url("/images/grabbing.png") 8 8, -moz-grabbing;
+    *cursor: url(../img/cursors/grabbing.cur); }
+  .royalSlider .auto-cursor {
+    cursor: auto; }
+  .royalSlider .royalHtmlContent {
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .royalSlider .non-draggable {
+    cursor: auto; }
+  .royalSlider .fade-container .royalSlide {
+    position: absolute;
+    left: 0;
+    top: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    z-index: 10; }
+  .royalSlider .royalImage {
+    max-width: none;
+    margin: 0;
+    padding: 0 !important;
+    border: 0 !important; }
+
+/*
+ **  Slides area (set background here) */
+/* slides holder, grabbing container */
+/* slide item */
+/*
+ *	Direction Navigation (arrows) */
+/* left arrow */
+/* right arrow */
+/* Control navigation container (bullets or thumbs) */
+/* This container is inside ".royalControlNavContainer"
+ * and is used for auto horizontal centering */
+/* Control navigation container */
+/* Scrollable thumbnails containers */
+/*
+ *	Control navigation (bullets, thumbnails) */
+/* Current control navigation item */
+/* Hover state navigation item */
+/* Thumbnails */
+/*
+ *	Thumbnails navigation arrows */
+/* Captions container */
+/* Caption item */
+/* Loading (welcome) screen */
+/* Loading screen text ("Loading...") */
+/* single slide image preloader */
+/* Cursor used if mouse dragging is disabled */

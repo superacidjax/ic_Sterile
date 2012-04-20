@@ -1,0 +1,7 @@
+%p Enjoy your iCouch session with #{@counseling_session.counselor.name} on #{@counseling_session.start_datetime.strftime("%A, %b %d at %l:%M %p")} #{counseling_session.counselor.time_zone}.
+- unless @counseling_session.counselor.skype_id.blank?
+  %p About five minutes before your appointment, login to iCouch. From your Dashboard, click the "Start Session" button to enter your video room. If there is a problem connecting, you can reach your counselor by Skype at: #{@counseling_session.counselor.skype_id}. If you have any questions, feel free to to email us at clients@icouch.me! You can also email your counselor at #{counseling_session.counselor.email}.
+  %p Thanks for choosing iCouch! Be sure to check out the #{link_to"iCouch CBT", href="http://itunes.apple.com/us/app/icouch-cbt/id446115508?mt=8"}iPhone app -- it's therapy in your pocket!.
+- else
+  %p About five minutes before your appointment, login to iCouch. From your Dashboard, click the "Start Session" button to enter your video room. If there is a problem connecting, you can email your counselor directly at #{counseling_session.counselor.email}. If you have any questions, feel free to to email us at clients@icouch.me!
+  %p Thanks for choosing iCouch! Be sure to check out the #{link_to"iCouch CBT", href="http://itunes.apple.com/us/app/icouch-cbt/id446115508?mt=8"}iPhone app -- it's therapy in your pocket!.

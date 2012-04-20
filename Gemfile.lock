@@ -1,0 +1,311 @@
+GIT
+  remote: git@github.com:superacidjax/opentok.git
+  revision: 0781ba10a767b140fb6dea8a96142521a3cb1d8b
+  specs:
+    opentok (0.0.5)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    abstract (1.0.0)
+    actionmailer (3.0.9)
+      actionpack (= 3.0.9)
+      mail (~> 2.2.19)
+    actionpack (3.0.9)
+      activemodel (= 3.0.9)
+      activesupport (= 3.0.9)
+      builder (~> 2.1.2)
+      erubis (~> 2.6.6)
+      i18n (~> 0.5.0)
+      rack (~> 1.2.1)
+      rack-mount (~> 0.6.14)
+      rack-test (~> 0.5.7)
+      tzinfo (~> 0.3.23)
+    activemodel (3.0.9)
+      activesupport (= 3.0.9)
+      builder (~> 2.1.2)
+      i18n (~> 0.5.0)
+    activerecord (3.0.9)
+      activemodel (= 3.0.9)
+      activesupport (= 3.0.9)
+      arel (~> 2.0.10)
+      tzinfo (~> 0.3.23)
+    activeresource (3.0.9)
+      activemodel (= 3.0.9)
+      activesupport (= 3.0.9)
+    activesupport (3.0.9)
+    addressable (2.2.7)
+    airbrake (3.0.9)
+      activesupport
+      builder
+    archive-tar-minitar (0.5.2)
+    arel (2.0.10)
+    bcrypt-ruby (3.0.1)
+    builder (2.1.2)
+    capistrano (2.11.2)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
+    capybara (1.1.2)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      selenium-webdriver (~> 2.0)
+      xpath (~> 0.1.4)
+    carrierwave (0.5.8)
+      activesupport (~> 3.0)
+    childprocess (0.3.1)
+      ffi (~> 1.0.6)
+    chronic (0.6.7)
+    coderay (1.0.5)
+    columnize (0.3.6)
+    crack (0.3.1)
+    cucumber (1.1.9)
+      builder (>= 2.1.2)
+      diff-lcs (>= 1.1.2)
+      gherkin (~> 2.9.0)
+      json (>= 1.4.6)
+      term-ansicolor (>= 1.0.6)
+    cucumber-rails (1.3.0)
+      capybara (>= 1.1.2)
+      cucumber (>= 1.1.8)
+      nokogiri (>= 1.5.0)
+    daemons (1.1.8)
+    dalli (1.1.5)
+    database_cleaner (0.7.1)
+    decent_exposure (1.0.2)
+    devise (1.5.3)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.0.3)
+      warden (~> 1.1)
+    diff-lcs (1.1.3)
+    dirty (0.0.6)
+    email_spec (1.2.1)
+      mail (~> 2.2)
+      rspec (~> 2.0)
+    erubis (2.6.6)
+      abstract (>= 1.0.0)
+    eventmachine (0.12.10)
+    excon (0.6.6)
+    fabrication (1.3.2)
+    ffi (1.0.11)
+    fog (0.9.0)
+      builder
+      excon (~> 0.6.1)
+      formatador (>= 0.1.3)
+      json
+      mime-types
+      net-scp (>= 1.0.4)
+      net-ssh (>= 2.1.4)
+      nokogiri (>= 1.4.4)
+      ruby-hmac
+    formatador (0.2.1)
+    friendly_id (4.0.2)
+    gherkin (2.9.0)
+      json (>= 1.4.6)
+    google_currency (2.0.2)
+      money (~> 3.5)
+      multi_json (>= 1.0.0)
+    haml (3.1.4)
+    heroku (2.21.2)
+      launchy (>= 0.3.2)
+      rest-client (~> 1.6.1)
+      rubyzip
+      term-ansicolor (~> 1.0.5)
+    highline (1.6.11)
+    i18n (0.5.0)
+    json (1.6.5)
+    launchy (2.0.5)
+      addressable (~> 2.2.6)
+    linecache19 (0.5.12)
+      ruby_core_source (>= 0.1.4)
+    mail (2.2.19)
+      activesupport (>= 2.3.6)
+      i18n (>= 0.4.0)
+      mime-types (~> 1.16)
+      treetop (~> 1.4.8)
+    method_source (0.7.1)
+    mime-types (1.17.2)
+    mini_magick (3.4)
+      subexec (~> 0.2.1)
+    money (3.7.1)
+      i18n (~> 0.4)
+    multi_json (1.1.0)
+    net-scp (1.0.4)
+      net-ssh (>= 1.99.1)
+    net-sftp (2.0.5)
+      net-ssh (>= 2.0.9)
+    net-ssh (2.3.0)
+    net-ssh-gateway (1.1.0)
+      net-ssh (>= 1.99.1)
+    newrelic_rpm (3.3.2)
+    nokogiri (1.5.2)
+    orm_adapter (0.0.6)
+    pg (0.13.2)
+    pickler (0.2.1)
+      crack (>= 0.1.8)
+    polyamorous (0.5.0)
+      activerecord (~> 3.0)
+    polyglot (0.3.3)
+    pry (0.9.8.4)
+      coderay (~> 1.0.5)
+      method_source (~> 0.7.1)
+      slop (>= 2.4.4, < 3)
+    rack (1.2.5)
+    rack-mount (0.6.14)
+      rack (>= 1.0.0)
+    rack-ssl (1.3.2)
+      rack
+    rack-test (0.5.7)
+      rack (>= 1.0)
+    rails (3.0.9)
+      actionmailer (= 3.0.9)
+      actionpack (= 3.0.9)
+      activerecord (= 3.0.9)
+      activeresource (= 3.0.9)
+      activesupport (= 3.0.9)
+      bundler (~> 1.0)
+      railties (= 3.0.9)
+    rails-default-database (1.0.6)
+      railties
+    rails-dev-boost (0.1.1)
+    railties (3.0.9)
+      actionpack (= 3.0.9)
+      activesupport (= 3.0.9)
+      rake (>= 0.8.7)
+      rdoc (~> 3.4)
+      thor (~> 0.14.4)
+    rake (0.9.2.2)
+    ransack (0.6.0)
+      actionpack (~> 3.0)
+      activerecord (~> 3.0)
+      polyamorous (~> 0.5.0)
+    rdoc (3.12)
+      json (~> 1.4)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
+    rspec (2.8.0)
+      rspec-core (~> 2.8.0)
+      rspec-expectations (~> 2.8.0)
+      rspec-mocks (~> 2.8.0)
+    rspec-core (2.8.0)
+    rspec-expectations (2.8.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.8.0)
+    rspec-rails (2.8.1)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec (~> 2.8.0)
+    ruby-debug-base19 (0.11.25)
+      columnize (>= 0.3.1)
+      linecache19 (>= 0.5.11)
+      ruby_core_source (>= 0.1.4)
+    ruby-debug19 (0.11.6)
+      columnize (>= 0.3.1)
+      linecache19 (>= 0.5.11)
+      ruby-debug-base19 (>= 0.11.19)
+    ruby-hmac (0.4.0)
+    ruby_core_source (0.1.5)
+      archive-tar-minitar (>= 0.5.2)
+    rubyzip (0.9.6.1)
+    sass (3.1.15)
+    selenium-webdriver (2.20.0)
+      childprocess (>= 0.2.5)
+      ffi (~> 1.0)
+      multi_json (~> 1.0)
+      rubyzip
+    sequel (3.20.0)
+    shoulda (3.0.1)
+      shoulda-context (~> 1.0.0)
+      shoulda-matchers (~> 1.0.0)
+    shoulda-context (1.0.0)
+    shoulda-matchers (1.0.0)
+    silent-postgres (0.1.1)
+    sinatra (1.0)
+      rack (>= 1.0)
+    sitemap_generator (3.0.0)
+      builder
+    slop (2.4.4)
+    sqlite3 (1.3.5)
+    sqlite3-ruby (1.3.3)
+      sqlite3 (>= 1.3.3)
+    state_machine (1.1.2)
+    stripe (1.6.2)
+      rest-client (~> 1.4)
+    subexec (0.2.1)
+    taps (0.3.23)
+      rack (>= 1.0.1)
+      rest-client (>= 1.4.0, < 1.7.0)
+      sequel (~> 3.20.0)
+      sinatra (~> 1.0.0)
+      sqlite3-ruby (~> 1.2)
+    term-ansicolor (1.0.7)
+    thin (1.3.1)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
+    thor (0.14.6)
+    timecop (0.3.5)
+    treetop (1.4.10)
+      polyglot
+      polyglot (>= 0.3.1)
+    tzinfo (0.3.32)
+    warden (1.1.1)
+      rack (>= 1.0)
+    whenever (0.7.2)
+      activesupport (>= 2.3.4)
+      chronic (~> 0.6.3)
+    xpath (0.1.4)
+      nokogiri (~> 1.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  airbrake
+  capistrano
+  capybara
+  carrierwave
+  cucumber-rails
+  dalli
+  database_cleaner
+  decent_exposure
+  devise
+  dirty
+  email_spec
+  fabrication
+  fog
+  friendly_id
+  google_currency
+  haml
+  heroku
+  launchy
+  mini_magick
+  money
+  newrelic_rpm
+  opentok!
+  pg
+  pickler
+  pry
+  rack-ssl
+  rails (= 3.0.9)
+  rails-default-database
+  rails-dev-boost
+  rake
+  ransack
+  rspec-rails
+  ruby-debug19 (= 0.11.6)
+  sass
+  shoulda
+  silent-postgres
+  sitemap_generator
+  state_machine
+  stripe
+  taps
+  thin
+  timecop
+  whenever (= 0.7.2)

@@ -1,0 +1,381 @@
+@import "mixins"
+
+body
+  font: normal 13px "myriad-pro", sans-serif
+  color: #3f3d32
+  -webkit-font-smoothing: anti-aliased
+  background: #fff url("/images/bg_body_banner.png") 0 0 repeat-x
+
+  hr
+    padding: 50px 0 50px 0
+    clear: both
+    border: 0
+    background: white url('/images/img-hr.png') no-repeat scroll 50% 50%
+    background-repeat-x: no-repeat
+    background-repeat-y: no-repeat
+    background-attachment: scroll
+    background-position-x: 50%
+    background-position-y: 50%
+    background-origin: initial
+    background-clip: initial
+    background-color: white
+    color: transparent
+    height: 12px
+
+#sitewrapper
+  background: transparent url("/images/bg_sitewrapper_banner.png") 100% 0 no-repeat
+
+a
+  color: #0083a2
+  &:hover
+    color: #7ac6c8
+a.button,
+button.button,
+input.button
+  +button
+  
+.hidden
+  display: none
+
+= site_container
+  width: 980px
+  margin: 0 auto
+#sitewrapper
+  > header
+    +site_container
+    position: relative
+    min-height: 95px
+    h1
+      margin: 0 0 15px 50px
+      padding: 15px 0 0 18px
+      position: relative
+      width: 200px
+      z-index: 20
+      a
+        display: block
+        width: 162px
+        height: 70px
+        text-indent: -8685px
+        overflow: hidden
+        background: transparent url("/images/logo_header.png") 0 0 no-repeat
+    nav
+      a
+        text-decoration: none
+      ul
+        overflow: hidden
+        margin-left: 300px
+        li
+          float: left
+          a
+            display: block
+            color: #838179
+            padding: 10px 15px
+            font-weight: 400
+            font-family: "myriad-pro", sans-serif
+            font-size: 16px
+            border-right: 2px solid #dce1d3
+            border-left: 2px solid #dce1d3
+            border-bottom: 2px solid #b0b5a5
+            border-top: 2px solid #b0b5a5
+            background: #fff url("/images/bg_nav-shadow.png") 0 100% repeat-x
+            &:hover
+              background: #C7C7C7
+              color: #fff
+          &.active
+            a
+              border-color: #C43B84
+              background: #fff
+              color: #3f3d32
+          &:first-of-type
+            a
+              +border-top-left-radius(7px)
+              +border-bottom-left-radius(7px)
+          &:last-of-type
+            a
+              +border-top-right-radius(7px)
+              +border-bottom-right-radius(7px)
+
+      a.billing
+        display: block
+        position: absolute
+        right: 25px
+        bottom: 0
+        z-index: 2
+        padding: 8px 20px
+        font-weight: bold
+        text-transform: uppercase
+        color: #ffffff
+        background: #667f2e url("/images/bg_nav-shadow.png") 0 100% repeat-x
+    #account_nav
+      position: absolute
+      left: 0
+      top: 0
+      z-index: 10
+      width: 100%
+      font-size: 12px
+      min-height: 50px
+      font-weight: bold
+      text-transform: uppercase
+      section
+        +site_container
+        ul.languages
+          float: left
+          padding: 10px 0 0 0
+          li
+            display: inline
+        article
+          social
+            clear: both
+            padding: 35px 0 0 150px
+            text-align: right
+            float: left
+          float: right
+          padding: 10px 0 0 0
+          p.messages
+            float: left
+            padding: 0 10px 0 0
+            a
+              float: left
+              margin: 2px 5px 0 0
+            span
+              float: left
+              padding: 2px 5px
+              color: #ffffff
+              +border-radius(3px)
+              background: #0083a2
+          p.user
+            float: left
+            padding: 0 40px 0 0
+            color: #777777
+            font-weight: normal
+            z-index: 10
+
+          ul.account
+            float: right
+            padding: 0 10px 0 0
+            color: #777777
+            li
+              display: inline
+              padding: 0 3px 0 0
+              a
+                color: #B43C84
+                margin: 0 3px 0 0
+            
+          ul.findcounselor
+            text-align: left
+            float: left
+            padding: 0 10px 0 0
+            color: #777777
+            li
+              display: inline
+              padding: 0 3px 0 0
+              a
+                margin: 0 3px 0 0
+
+
+          p.emergency
+            float: left
+            a
+              padding: 2px 4px
+              color: #ffffff
+              text-decoration: none
+              +border-radius(3px)
+              background: #cc0000
+
+#content
+  position: relative
+  float: left
+  left: 50%
+  width: 980px
+  min-height: 520px
+  padding: 0px
+  margin: 0 0 0 -460px
+  background: #ffffff
+  section
+    > header
+      width: 890px
+      margin: 0 0 20px -50px
+      overflow: hidden
+      h1
+        float: left
+        font-weight: normal
+        padding: 10px 80px 10px 50px
+        font-size: 30px
+        color: #ffffff
+        background: #b33c85 url("/images/bg_page-heading.png") 100% 0 no-repeat
+        background-color: rgba(179, 60, 133, .9)
+      a
+        font-weight: bold
+        margin: 20px 0 0 0
+  .notice, .success, .alert, .tip
+    clear: both
+    padding: 17px 20px 17px 50px
+    margin: 0 0 20px 0
+    +border-radius(5px)
+    background: #ffffe5 url("/images/icon_notice.png") 15px 15px no-repeat
+    a
+      font-weight: bold
+    h2
+      padding: 0 0 5px 0
+      margin: 0
+      font-size: 18px
+      text-transform: none
+      letter-spacing: 0px
+      border: none
+      background: transparent
+  .success
+    background-color: #e7f3d5
+    background-image: url("/images/icon_success.png")
+  .tip
+    text-align: center
+    background: #d9eeef
+    padding: 30px 20px
+    +border-radius(5px)
+    a
+      font-weight: bold
+
+
+searching
+  text-align: center
+  search
+    +border-radius(5px)
+    background: #eaf4f6
+    overflow: hidden
+    input[type="text"]
+      +border-radius(5px)
+      border: 1px solid #c9cfcf
+      padding: 8px 0 9px 36px
+      background: url(/images/icon_search.png) 10px center no-repeat #fff
+      color: #666
+    input[type="submit"]
+      padding: 4px 8px 4px 8px
+      border: 1px solid #d4e9ee
+      -moz-border-radius: 5px
+      border-radius: 5px
+      background: #C43B84
+      font-weight: 300
+      color: #FFF
+      font-family: "myriad-pro", sans-serif
+      font-size: 18px
+      text-transform: uppercase
+      text-decoration: none
+      &:hover
+        border: 1px solid #C43B84
+        -moz-border-radius: 5px
+        border-radius: 5px
+        background: #d4e9ee
+        font-weight: 300
+        color: #0b4654
+        font-family: "myriad-pro", sans-serif
+        font-size: 18px
+        text-transform: uppercase
+        text-decoration: none
+    > p
+      padding: 10px
+      font-weight: bold
+      font-family: "myriad-pro",sans-serif 
+      font-size: 12px
+
+footer
+  clear: both
+  overflow: hidden
+  width: 920px
+  margin: 0 auto
+  padding: 8px 25px 100px 25px
+
+  a
+    text-decoration: none
+  nav
+    width: 870px
+    float: left
+    h3
+      padding: 0 0 28px 0
+      a
+        display: block
+        width: 259px
+        height: 40px
+        text-indent: -8685px
+        background: transparent url("/images/logo_footer.png") 0 0 no-repeat
+    li
+      display: inline
+      padding: 0 20px 0 0
+      font-size: 11px
+      font-weight: bold
+      a
+        color: #858477
+  section
+    social
+      padding: 0 75px 0px 0
+      float: right
+      margin-bottom: 30px
+      clear: both
+      float: right
+    text-align: right
+    ul
+      float: right
+      padding: 0 0 20px 0
+    li
+      float: left
+      margin: 0 0 0 10px
+      a
+        display: block
+        padding: 10px 10px 10px 35px
+        font-weight: bold
+        color: #454643
+        +border-radius(7px)
+        background: #d8dbd2
+        border: 1px solid #c6c9c0
+        &.twitter
+          background: #d8dbd2 url("/images/icon_twitter.png") 10px 50% no-repeat
+        &.facebook
+          background: #d8dbd2 url("/images/icon_facebook.png") 10px 50% no-repeat
+        &.icouch_cbt
+          background: #d8dbd2 url("/images/cbt_icon.png") 10px 50% no-repeat
+        &.gplus
+          background: #d8dbd2 url("/images/icon_gplus.png") 10px 50% no-repeat
+        &:hover
+          background-color: #d4e9ed
+          border-color: #a7dbdb
+          color: #454643
+    p
+      text-align: center
+      clear: both
+      font-size: 11px
+      color: #858477
+      a
+        font-weight: bold
+        color: #858477
+
+article.copy
+  p
+    margin: 0 0 15px 0
+    line-height: 170%
+  h2
+    margin: 25px 0 15px 0
+    font-size: 18px
+  h3
+    margin: 25px 0 15px 0
+    font-size: 14px
+  ul, ol
+    margin: 0 0 15px 0
+    padding: 0 60px
+    line-height: 170%
+    li
+      margin: 0 0 5px 0
+      list-style: disc
+  ol
+    li
+      list-style: decimal
+  dl
+    margin: 30px 40px
+    padding: 0 20px
+    line-height: 170%
+    border-left: 2px solid #e0e0de
+    border-right: 2px solid #e0e0de
+    dt
+      font-weight: bold
+    dd
+      margin: 0 0 15px 10px
+
+
+

@@ -1,0 +1,21 @@
+- content_for :head do
+  %meta{:name => "description", :content => "Getting started as an iCouch Counselor is easy. There are just a few first steps to take after getting approved."}/
+  %meta{:name => "keywords", :content => "counseling, iCouch, first steps, Right Signature, informed consent, scheduling, hardware, video counseling, Skype" }/
+  - @title ="iCouch Counselor First Steps"
+  %title =@title
+
+%section#static_content
+  %header
+    %h1 Your first steps as an iCouch Counselor
+  %article.copy
+    %p The first thing you'll want to do after signing up and getting approved is to ensure that your profile is perfect. While we proofread counselor profiles, you should still ensure that you have everything perfect. After all, your profile is often the only thing a potential client sees. Consider it your iCouch business card. A great profile (especially your bio) is vital to making clients feel comfortable and willing to give you a shot.
+    %ul
+      %li Be sure to upload a photo to your profile. Remember, you want to convey a professional, yet approachable image.
+      %li Ensure that your profile is complete. That includes your educational background, specialties and bio.
+      %li Set your availability. Clients can only book appointments during your available times. You can change this as often as necessary as your schedule changes.
+      %li Sign up for #{link_to "Right Signature", "http://rightsignature.com/p/BD"}. While this isn't required to be an iCouch Counselor, it's our preferred way for you to handle your informed consent. You should set up a template with your informed consent. Then, for each client, you simply click 'send' in Right Signature and they'll be able to legally sign the document online. The documents are legally binding and are stored securely. You can also download PDFs of your signed documents. iCouch never has access to your Right Signature documents -- that's between you and your client.
+      %li Next, you'll want to review the #{link_to "iCouch Ethical Code", ethical_code_path}. These are the standards we expect all iCouch Counselors to meet.
+      %li You'll want to #{link_to "follow us on Twitter", href="http://twitter.com/icouchme"} to keep informed about the cool stuff we have to share.
+      %li Don't forget to #{link_to "like us on Facebook", href="http://www.facebook.com/pages/iCouchme/118950071461826"}!
+      %li You are also invited to contribute to the #{link_to "iCouch Blog", href="http://blog.icouch.me"}. The blog is a great place for you to share your expertise in counseling as well as providing you with a platform through which you can promote yourself and ultimately gain new iCouch clients. Email us to get added as a contributor! #{mail_to "blog@icouch.me"}.
+      %li= mail_to "jessica@icouch.me", "Get more help"

@@ -1,0 +1,29 @@
+#mySlider.royalSlider.default
+  %ul.royalSlidesContainer
+    %li.royalSlide
+      %img.royalImage{:height => "400", :src => "/images/anxiety.png", :width => "980", :alt => "iCouch online therapy can help you win the battle over anxiety."}/
+      .royalCaption
+        %h3.royalCaptionItem{"data-show-effect" => "fade movetop"}
+          =link_to "Learn about anxiety", anxiety_path
+    %li.royalSlide
+      %img.royalImage{:height => "400", :src => "/images/stress.png", :width => "980", :alt => "iCouch is great for helping you beat stress."}/
+      .royalleftCaption
+        %h3.royalleftCaptionItem{"data-show-effect" => "fade movetop", :style => "top:300px; left:10%;"}
+          =link_to "Learn about stress", stress_path
+    %li.royalSlide
+      %img.royalImage{:height => "400", :src => "/images/depression.png", :width => "980", :alt => "iCouch can help you manage your depression."}/
+      .royalCaption
+        %h3.royalCaptionItem{"data-show-effect" => "fade movetop"}
+          =link_to "Learn about depression", depression_path
+    %li.royalSlide
+      %img.royalImage{:height => "400", :src => "/images/nomatter.png", :width => "980", :alt => "iCouch online therapy is great to help you feel great."}/
+      .royalleftCaption
+        %h3.royalleftCaptionItem{"data-show-effect" => "fade movetop", :style => "top:300px; left:50%;"}
+          =link_to "Find a therapist now!", search_counselors_path
+:javascript
+  $(document).ready(function() {
+      $("#mySlider").royalSlider({
+          captionShowEffects:["moveleft", "fade"],
+          directionNavAutoHide: true
+      });  
+  });

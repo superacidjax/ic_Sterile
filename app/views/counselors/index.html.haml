@@ -1,0 +1,19 @@
+%section#client_counselors
+
+  %header
+    %h1 My Therapists
+
+  %article
+    - if my_counselors.any?
+      %ul.standard.people
+        = render my_counselors
+  %h3
+    Want to find another therapist to work with?
+  %br
+  %br
+        
+
+  = render partial: 'dashboards/search'
+  %br
+  %br
+  %hr

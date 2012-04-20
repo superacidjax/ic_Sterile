@@ -1,0 +1,136 @@
+- content_for :head do
+  %meta{:name => "description", :content => "iCouch is your therapy anywhere. iCouch is the best place to get quality online therapy."}/
+  %meta{:name => "keywords", :content => "counseling, therapy, find a counselor, find a therapist, online counseling, online therapy, international, video counseling, psychology, psychologists, depression, anxiety, bipolar, etherapy, make positive changes, CBT, iCouch CBT, mobile therapy, therapy apps, counseling apps, anxiety, depression, bipolar, anger, stress, expats, secure therapy" }/
+  = stylesheet_link_tag "rs_default", "royalslider"
+  = javascript_include_tag "jquery-1.6.2.min", "jquery.easing.1.3.min", "royal-slider-8.1.min"
+  %title
+    =@title = "iCouch | Your therapy. Your couch."
+
+%section#slider
+= render partial: 'dashboards/slider'
+%section#home
+  = render partial: 'dashboards/search'
+  %header
+    %h1
+      %strong
+        Talk
+      to someone.
+    %h3
+      %strong
+        Find
+      the perfect therapist.
+    %h3
+      %strong
+        Schedule
+      a session right for you.
+    %h3
+      %strong
+        Connect
+      with high quality, secure video.
+    %h2
+      iCouch makes online therapy easy.
+      %br
+      %br
+    %br
+    %br
+
+  %iframe{:allowFullScreen => "", :frameborder => "0", :height => "518", :mozallowfullscreen => "", :src => "https://player.vimeo.com/video/38532594?title=0&byline=0&portrait=0&color=5d939f", :webkitAllowFullScreen => "", :width => "921"}
+  %hr
+  %article
+    %ul
+      %li
+        = link_to image_tag("/images/img_home_1.png"), about_icouch_security_path, alt: "iCouch is the most secure online therapy site anywhere."
+        %h1
+          It's secure.
+        %p
+          iCouch is the most secure platform ever developed.
+        %p{:style => "text-align:right"}
+          =link_to "READ MORE", about_icouch_security_path
+      %li
+        = link_to image_tag("/images/img_home_2.png"), about_icouch_therapists_path, :alt => "iCouch has the most qualified therapists!"
+        %h1
+          We have the best therapists.
+        %p
+          We verify the licenses, education and the professional background of every therapist.
+        %p{:style => "text-align:right"}
+          =link_to "READ MORE", about_icouch_therapists_path
+
+
+      %li
+        = link_to image_tag("/images/img_home_3.png"), how_icouch_works_path, :alt => "iCouch is easy to use!"
+        %h1
+          iCouch is easy.
+        %p
+          Find a counselor. See their schedule. Book your session. It's easy.
+        %p{:style => "text-align:right"}
+          =link_to "READ MORE", how_icouch_works_path
+    %hr
+  %story
+    %jesimage
+      = image_tag("/images/jessica.png", :alt => "Jessica Rios, iCouch Cofounder and Clinical Director.")
+      %jescaption
+        %h3
+          iCouch Cofounder
+          %strong
+            Jessica Rios, M.A., M.Ed.
+    %text
+      %h1
+        Why we created iCouch
+      %h2
+        It's hard to find a great therapist.
+      %p
+        We've lived all over the world: China, Korea, Mexico, France, Canada and the US. We know how hard it is to find great therapists that can relate to you. We want to make it easy for you to find someone that you can trust, connect with and improve with -- no matter where you are.
+      %h2
+        You deserve the best therapist.
+      %p
+        The best therapist for you isn't necessarily the one closet to you. Maybe you live overseas or just on the other side of town. We created iCouch because we want your perfect therapist to be as close as your computer.
+      %h2
+        We want to make something beautiful.
+      %p
+        You are beautiful. You have an amazing life -- you just need to discover it. We created iCouch because we want to play a part in building and improving the most important and beautiful thing there is -- yourself.
+    %hr
+
+  %cbtstory
+    %cbtimage
+      = link_to image_tag("/images/iphone.png"), 'http://itunes.apple.com/us/app/icouch-cbt/id446115508?mt=8', :alt => "iCouch CBT is the best therapy app available!"
+    %text
+      %h1
+        Not ready for therapy?
+      %h2
+        Want to feel better?
+      %h3
+        There's an app for that..
+      %h4
+        Meet the world's best selling therapy app.
+      %h2
+        %strong
+          iCouch CBT
+        helps you train your emotions and feel better.
+      %h5
+        =link_to image_tag("/images/appstorelogo.png"), 'http://itunes.apple.com/us/app/icouch-cbt/id446115508?mt=8', :alt => "iCouch CBT is only $1.99 on the App Store."
+    %hr
+%section#headline
+  %h2
+    %italic
+      "A game changing health startup"
+  %h3
+    Inc. Magazine
+  %h2
+    %italic
+      "Disrupting the health industry"
+  %h3
+    Betabeat
+  %ul
+    %li
+      = link_to image_tag("/images/crains_nyc_logo.jpg"), 'http://www.crainsnewyork.com/article/20120330/SMALLBIZ/120339986', alt: "iCouch featured in Crain's New York."
+    %li
+      = link_to image_tag("/images/betabeat_logo.jpg"), about_icouch_security_path, alt: "iCouch is the most secure online therapy site anywhere."
+    %li
+      = link_to image_tag("/images/latimes_logo.png"), 'http://articles.latimes.com/2012/mar/24/health/la-he-shrink-apps-20120324', alt: "iCouch CBT featured in the LA Times."
+    %li
+      = link_to image_tag("/images/techcrunch_logo.jpg"), 'http://techcrunch.com/2012/01/09/nyc-techstars-member-blueprint-health-announces-its-first-class-of-startups/', alt: "iCouch iCouch featured in TechCrunch."
+    %li
+      = link_to image_tag("/images/inc_logo.jpg"), 'http://www.inc.com/ss/christina-desmarais/17-game-changing-health-tech-start-ups.html#2', alt: "iCouch featured in Inc. Magazine."
+    %li
+      = link_to image_tag("/images/xconomy_logo.jpg"), 'http://www.xconomy.com/new-york/2012/03/29/blueprint-health-graduates-first-class-at-demo-day/', alt: "iCouch featured in Xconomy."
+    %hr

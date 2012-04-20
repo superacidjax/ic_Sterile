@@ -1,0 +1,50 @@
+%section#dashboard
+
+  %header
+    %h1 Dashboard
+  %article
+    %hgroup.bordered
+      %h1 Current Sessions
+    %ul.standard
+      - upcoming_sessions.each do |this_session|
+        %li
+          %dl.session
+            %dt Session
+            %dd= this_session.client.name
+          %dl.date
+            %dt Date
+            %dd= this_session.start_datetime.strftime('%b %d, %Y')
+          %dl.time
+            %dt Time
+            %dd= this_session.start_datetime.strftime("%l:%M %p")
+          %dl.start_session
+            %dt
+            %dd
+              = link_to "Start Session", counseling_session_path(this_session), :class => 'button'
+          %p
+    - if upcoming_sessions.empty?
+      %p.tip
+        You don't have any future sessions booked.
+  - if previous_sessions.any?
+    %article
+      %hgroup.bordered
+        %h1 Old Sessions
+      %ul.standard
+        - previous_sessions.each do |this_session|
+          %li
+            %dl.session
+              %dt Session
+              %dd= this_session.client.name
+            %dl.date
+              %dt Date
+              %dd= this_session.start_datetime.strftime('%b %d, %Y')
+            %dl.time
+              %dt Time
+              %dd= this_session.start_datetime.strftime("%l:%M %p")
+            
+
+  %hr
+
+%section#counselor_dashboard
+  = render partial: 'counselor/session_preferences/availability'
+  %hr

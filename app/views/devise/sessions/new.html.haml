@@ -1,0 +1,22 @@
+- content_for :head do
+  %meta{:name => "description", :content => "Sign in to iCouch Web."}/
+  %meta{:name => "keywords", :content => "counseling, therapy, counselors, clients, sign in" }/
+  %title
+    =@title = "iCouch Web | Sign in"
+
+%section#sign_in
+  %header
+    %h1 Sign in
+  = fancy_form_for resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "standard"} do |f|
+    %fieldset
+      = f.dl_input :email_field, :email
+      = f.dl_input :password_field, :password do
+        = link_to "Forgot password?", new_account_password_path
+      %label.checkbox(for="account_remember_me")
+        = f.check_box :remember_me
+        Remember me
+    %fieldset.actions
+      %input(type="submit" value="Sign in")
+      Don&rsquo;t have an account?
+      = link_to "Sign Up Now", new_client_account_path
+      = render 'shared/privacy'

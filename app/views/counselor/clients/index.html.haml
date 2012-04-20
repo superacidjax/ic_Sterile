@@ -1,0 +1,11 @@
+%section#counselor_clients
+  %header
+    %h1 Clients
+  %article
+    %ul.standard.people
+      = render clients
+
+  - unless clients.map(&:counseling_sessions).any?
+    .tip
+      You haven't booked any sessions with clients yet.
+      = link_to 'Update your schedule', edit_counselor_account_session_preference_path

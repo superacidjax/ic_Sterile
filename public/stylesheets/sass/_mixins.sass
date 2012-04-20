@@ -1,0 +1,74 @@
+@import "whitespace-reset"
+
+$site_width: 960px
+
+= border-radius($radius)
+  -moz-border-radius: $radius
+  border-radius: $radius
+= border-top-right-radius($radius)
+  -moz-border-radius-topright: $radius
+  border-top-right-radius: $radius
+= border-top-left-radius($radius)
+  -moz-border-radius-topleft: $radius
+  border-top-left-radius: $radius
+= border-bottom-right-radius($radius)
+  -moz-border-radius-bottomright: $radius
+  border-bottom-right-radius: $radius
+= border-bottom-left-radius($radius)
+  -moz-border-radius-bottomleft: $radius
+  border-bottom-left-radius: $radius
+= box-shadow($arguments)
+  -webkit-box-shadow: $arguments
+  -moz-box-shadow: $arguments
+  box-shadow: $arguments
+= opacity($val)
+  opacity: $val
+  filter: alpha(opacity=$val*100)
+= gradient-bg($color1, $color2)
+  background-color: $color1
+  background-image: -moz-linear-gradient(100% 100% 90deg, $color2, $color1)
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($color1), to($color2))
+
+= button
+  display: block
+  text-align: center
+  text-decoration: none
+  color: #0b4654
+  background: #d4e9ee
+  border: 1px solid #a3c8d0
+  text-transform: uppercase
+  font-weight: bold
+  font-size: 11px
+  padding: 2px 20px 1px 20px
+  line-height: 240%
+  +border-radius(5px)
+  &:hover
+    background: #c4f6ff
+    
+= button_red
+  display: block
+  text-align: center
+  text-decoration: none
+  color: #fff
+  background: #B43C84
+  border: 1px solid #000
+  text-transform: uppercase
+  font-weight: bold
+  font-size: 11px
+  padding: 2px 20px 1px 20px
+  line-height: 240%
+  +border-radius(5px)
+  &:hover
+    background: #c4f6ff
+  
+= input($w: 262, $h: 20)
+  width: #{$w}px
+  height: #{$h}px
+  padding: 3px 5px
+  margin: 0 0 5px 0
+  font: normal 13px Helvetica, Arial, sans-serif
+  color: #333333
+  border: 1px solid #cccccc
+  +border-radius(3px)
+= textarea($w: 400, $h: 50)
+  +input($w, $h)

@@ -1,0 +1,21 @@
+- content_for :head do
+  %meta{:name => "description", :content => "iCouch is a new kind of company for an exciting new mode of psychological counseling. iCouch makes the powerful tools of counseling easily available to anyone who needs them."}/
+  %meta{:name => "keywords", :content => "counseling, iCouch, Web 3.0, simple, online counseling, online therapy, international, Brian Dear, Jessica Rios, video counseling, startup" }/
+  - @title ="About iCouch"
+  %title =@title
+
+%section#static_content
+  %header
+    %h1 About us
+  %article.copy
+    %p iCouch is a new kind of company for an exciting new mode of psychological counseling. We started iCouch in a small apartment in Suzhou, China when one of our Mexican friends needed to talk to a Spanish-speaking psychologist; the closest Spanish speaking therapist was a nearly 2 hour train-ride away and there was only 1 choice available! Cofounder and Head Psychologist Jessica Rios, originally from Guadalajara, knew many great Spanish-speaking counselors — in Mexico. We decided to experiment with Skype to see if we could coordinate a session for our friend.
+    %p In April 2010, we facilitated what might have been the first Suzhou-Mexico video counseling session. The success of that session led us to wonder: If it worked for one person, why couldn’t it work for everyone? Cofounders Brian Dear and Jessica Rios began to closely examine the great divide between people who want affordable counseling and the availability of counselors. We discovered that our friend wasn’t alone and it wasn’t just a lack of Spanish-speaking counselors causing difficulty for potential clients — people across the United States and the rest of the world all have difficulty finding great counselors, regardless of language.
+    %p Of course there are other online counseling providers, however their sites look like they were built for psychology professors or insurance executives rather than for real people. It isn’t just a matter of design — it’s a matter of simplicity and, dare we say, elegance. We aren’t afraid of big words, but we hate pretension, jargon and intimidation.  We found that most online counseling sites (and many psychologists) attempt to sound authoritative by using a professorial tone, but they end up just being off-putting. There’s a reason that Ernest Hemingway’s books are so powerful — he used simple language to convey complex ideas in ways that transcend the number of syllables used.  iCouch is that kind of company. We make the powerful tools of counseling available to anyone who needs them without intimidating people.
+    %p
+      We’re kind of like a
+      = link_to "fixed-gear bicycle", "http://en.wikipedia.org/wiki/Fixed-gear_bicycle"
+      — simple, lightweight, versatile, inexpensive, yet popular among both world-class cyclists and “normal” people like us.
+    %h2 Thanks for visiting iCouch! We look forward to helping you make a better you.
+    %h3 Want to learn more? Visit the #{link_to "iCouch Lounge", the_lounge_path}!
+    %h3 Your therapy. Your couch. iCouch.
+  %iframe{:allowFullScreen => "", :frameborder => "0", :height => "518", :mozallowfullscreen => "", :src => "https://player.vimeo.com/video/39987017?title=0&amp;byline=0&amp;portrait=0&amp;color=5d939f", :webkitAllowFullScreen => "", :width => "921"}

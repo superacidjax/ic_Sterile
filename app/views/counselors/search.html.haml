@@ -1,0 +1,74 @@
+- content_for :head do
+  %meta{name: "description", content: "Find a great iCouch Therapist! Search by name, specialty and gender."}/
+  %meta{name: "keywords", content: "online counseling, counselors, therapists, online therapists, find a therapist, psychologist, psychoanalyst, find a great therapist" }/
+  %title
+    = @title = "Find a therapist"
+
+%section#client_counselors_search
+  %header
+    %h1 Find a Therapist
+    %h2
+      Finding a great therapist is easy!
+    
+    %h3
+      If you know your therapist's name &mdash; enter all or part of the last name in the box below.
+    %h3
+      You can also search by specialty and/or gender.
+    %br
+    %br
+    %br
+    = render partial: 'dashboards/home_search'
+    -if params[:q].present?
+      %br
+      %br
+      You searched for a therapist..
+      - if query[:last_name_cont].present?
+        %br
+        with the last name of:
+        %strong
+          #{query[:last_name_cont]} 
+      - if query[:specialities_issue_name_eq].present?
+        %br
+        specializing in
+        %strong
+          #{query[:specialities_issue_name_eq]} 
+      - if query[:gender_eq].present?
+        %br
+        who is
+        %strong
+          #{query[:gender_eq]}. 
+
+
+  - if params[:q].present?
+    - if searched_counselors.any?
+      %ul.standard.people
+        = render searched_counselors.shuffle
+    - else
+      %br
+      %br
+      %h3 No results found
+    %hr
+
+
+  %tips
+    %h4
+      Some tips:
+    %ul
+      %li
+        %strong
+          Consider looking at therapists of different genders.
+        You not only want a therapist that you can relate to, but someone who can see things differently.
+      %li
+        While degrees are important, the best counselors aren't always the ones with the most letters behind their name.
+        %strong
+          All iCouch counselors are fully qualified to help.
+      %li
+        %strong
+          Consider geography.
+        A therapist from your own area might be helpful, but someone from a different area can often have a unique perspective on your situation.
+      
+      %hr
+
+    %h2
+      
+    

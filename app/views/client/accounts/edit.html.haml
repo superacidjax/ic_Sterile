@@ -1,0 +1,20 @@
+%section#sign_up
+
+  = render 'shared/account_nav'
+
+  = fancy_form_for current_user, url: client_account_path, :html => {:class => "standard"} do |f|
+    %fieldset
+      %h1 Basic Information
+      = f.dl_input :text_field, :first_name
+      = f.dl_input :text_field, :last_name
+      = f.dl_input :text_field, :skype_id
+      = render 'users/address_fields', :form => f
+    %fieldset
+      %h1 Account Information
+      = f.dl_input :email_field, :email
+      = f.dl_input :password_field, :password
+      = f.dl_input :password_field, :password_confirmation
+    %fieldset.actions
+      %input(type="submit" value="Save")
+      = link_to "Cancel", root_path
+      = render 'shared/privacy'

@@ -1,0 +1,109 @@
+- content_for :head do
+  %meta{:name => "description", :content => "Find an iCouch Counselor."}/
+  %meta{:name => "keywords", :content => "online counseling, counselors, therapists, online therapists, find a therapist, psychologist, psychoanalyst" }/
+
+%section#client_counselors_show
+  %header
+    %h1 Counselors
+    %p.go_back= link_to "Back to counselors", admin_counselors_path
+  %article
+    %header
+      = image_tag counselor.avatar.profile.url, :alt => counselor.name
+      .stats
+        %h1= counselor.name
+        %p Joined #{counselor.created_at.to_date.strftime('%B %d, %Y')}
+        %p= 'Status: ' + counselor.status.try(:camelize)
+        .actions{style: 'float:left'}
+          - unless ['active', 'deactivated'].include? counselor.status
+            = button_to 'Approve Counselor',
+              [:approve, :admin, counselor],
+              method: :put, confirm: "Approve #{counselor.name}?", class: 'button approve'
+            %br
+
+          - unless ['deactivated', 'rejected', 'active'].include? counselor.status
+            = button_to 'Reject Counselor',
+              [:reject, :admin, counselor],
+              method: :delete, confirm: "Reject #{counselor.name}?", class: 'button reject'
+            %br
+
+          - if counselor.active?
+            = button_to 'Deactivate Counselor',
+              [:deactivate, :admin, counselor],
+              method: :put, confirm: "Deactivate #{counselor.name}?", class: 'button approve'
+            %br
+
+          - if counselor.deactivated?
+            = button_to 'Reactivate Counselor',
+              [:reactivate, :admin, counselor],
+              method: :put, confirm: "Reactivate #{counselor.name}?", class: 'button approve'
+            %br
+    %dl.standard
+      %dt Email Address
+      %dd= mail_to counselor.email
+      %dt Phone Number
+      %dd= number_to_phone(counselor.phone_number)
+      %dt Skype ID
+      %dd= counselor.skype_id
+      %dt Time Zone
+      %dd= counselor.time_zone
+      %dt City
+      %dd= counselor.city
+      %dt State/Province
+      %dd= counselor.state_or_province
+      %dt Zip/Postal Code
+      %dd= counselor.postal_code
+      %dt Country
+      %dd= counselor.country
+      %dt Birthday
+      %dd= counselor.birthday
+      %dt EIN/SS
+      %dd= counselor.employer_id_number
+      %dt Gender
+      %dd= counselor.gender
+      %dt Bio
+      %dd= counselor.counselor_bio
+    %dl.standard
+      %dt Undergraduate
+      %dd
+        %p
+          %strong= counselor.undergraduate_university
+        %p= counselor.undergraduate_degree
+      %dt Graduate
+      %dd
+        %p
+          %strong= counselor.graduate_university
+        %p= counselor.graduate_degree
+      %dt Professional
+      %dd
+        %p
+          %strong= counselor.doctoral_university
+        %p= counselor.doctoral_degree
+      %dt Certifications
+      %dd= counselor.certifications
+      %dt Licensed?
+      %dd
+        - if counselor.licensed?
+          Yes,
+          \##{counselor.license_number} from #{counselor.licensing_authority}
+        - else
+          No
+      %dt License suspended?
+      %dd
+        - if counselor.license_suspended?
+          %p
+            %strong Yes
+          %div
+            = simple_format(counselor.license_suspension_explanation)
+          %p
+            %em #{counselor.license_suspension_authority}, #{counselor.license_suspension_date}
+        - else
+          %p No
+      %dt Specialities
+      %dd= issues_for(counselor)
+      %dt Languages
+      %dd= languages_for(counselor)
+      %dt Religions
+      %dd= counselor.other_religions
+
+      %dt Unique URL
+      %dd secure.icouch.me/counselors/#{counselor.slug}

@@ -1,0 +1,35 @@
+- content_for :head do
+  %meta{:name => "description", :content => "iCouch therapists are all verified and licensed. They are all highly qualified and must follow the iCouch Ethical Code."}/
+  %meta{:name => "keywords", :content => "ethical therapists, therapist credentials, find a therapist, therapist verification" }/
+  %title
+    =@title = "About iCouch Therapists"
+
+%section#static_content
+  %header
+    %h1
+      About iCouch Therapists
+    %article.copy
+      %br
+      %br
+      %br
+      %br
+      %h2
+        Only the best, most qualified therapists can join iCouch.
+      %p
+        Every iCouch therapist must meet the highest standards, both professionally and personally. We don't allow just anyone to become an iCouch counselor.
+      %p
+        Here are the minimum requirements:
+      %ul
+        %li
+          Must be licensed within their home location. We verify all licenses.
+        %li
+          No professional disciplinary history.
+        %li
+          No felony criminal history.
+        %li
+          We verify all educational degrees, certificates and certifications.
+      %p
+        All iCouch therapists are required to follow the #{link_to "iCouch Ethical Code", ethical_code_path}.
+      %h3
+        Is your therapist on iCouch? If not, #{mail_to 'refermytherapist@icouch.me', 'let us know'}! 
+

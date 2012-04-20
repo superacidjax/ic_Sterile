@@ -1,0 +1,28 @@
+- content_for :head do
+  %meta{:name => "description", :content => "iCouch is simple. Just find a therapist, schedule a session, and connect with secure video."}/
+  %meta{:name => "keywords", :content => "counseling, therapy, how online counseling works, icouch process, online counseling, online therapy, video counseling, psychology, psychologists, etherapy" }/
+  %title
+    =@title = "How iCouch Works"
+
+%section#static_content
+  %header
+    %h1
+      How it works
+    %article.copy
+      %br
+      %br
+      %br
+      %br
+      %h2
+        It's easy!
+      %ul
+        %li
+          = link_to "Find a therapist", search_counselors_path
+        %li
+          Create your account.
+        %li
+          Buy session credits. Single sessions cost $90, 2 sessions cost $170, 4 sessions cost $325.
+        %li
+          Visit your therapist's page and book a session for the specific time you want.
+        %li
+          You'll get an email reminding you of your session. When it's time for your session, log on to Skype and your counselor will connect with you at your session time.

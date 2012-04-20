@@ -1,0 +1,49 @@
+%section#clients
+  %hgroup
+    %h1 Counselors
+  %table.standard
+    %thead
+      %tr
+        %th Name
+        %th Email
+        %th Status
+        %th
+        %th Date Submitted
+    %tbody
+      - counselors.submitted.each do |counselor|
+        %tr.clickable{:style => "background:#FFD700"}
+          %td= link_to counselor.name, [:admin, counselor]
+          %td= mail_to counselor.email
+          %td= counselor.status.try(:camelize)
+          %td= counselor.created_at.to_date.strftime('%B %d, %Y')
+    %tbody
+      - counselors.pending.each do |counselor|
+        %tr.clickable{:style => "background:#FFEC8B"}
+          %td= link_to counselor.name, [:admin, counselor]
+          %td= mail_to counselor.email
+          %td= counselor.status.try(:camelize)
+          %td= counselor.created_at.to_date.strftime('%B %d, %Y')
+
+    %tbody
+      - counselors.deactivated.each do |counselor|
+        %tr.clickable{:style => "background:#FFC1C1"}
+          %td= link_to counselor.name, [:admin, counselor]
+          %td= mail_to counselor.email
+          %td= counselor.status.try(:camelize)
+          %td= counselor.created_at.to_date.strftime('%B %d, %Y')
+
+    %tbody
+      - counselors.active.each do |counselor|
+        %tr.clickable{:style => "background:#DFFFA5"}
+          %td= link_to counselor.name, [:admin, counselor]
+          %td= mail_to counselor.email
+          %td= counselor.status.try(:camelize)
+          %td= counselor.created_at.to_date.strftime('%B %d, %Y')
+    
+    %tbody
+      - counselors.rejected.each do |counselor|
+        %tr.clickable{:style => "background:#E0DFDB"}
+          %td= link_to counselor.name, [:admin, counselor]
+          %td= mail_to counselor.email
+          %td= counselor.status.try(:camelize)
+          %td= counselor.created_at.to_date.strftime('%B %d, %Y')

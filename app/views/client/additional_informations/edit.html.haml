@@ -1,0 +1,12 @@
+%section#sign_up
+
+  = render 'shared/account_nav'
+
+  = fancy_form_for client, :url => client_account_additional_information_path, :html => {:method => :put, :class => "standard"} do |f|
+
+    = render 'fields', :f => f
+
+    %fieldset.actions
+      %input(type="submit" value="Save and Continue")
+      = link_to "Skip This", root_path
+      = render 'shared/privacy'

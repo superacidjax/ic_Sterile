@@ -1,0 +1,20 @@
+%section#dashboard
+  %header
+    %h1 Dashboard
+  - if client.upcoming_sessions.any?
+    %article
+      %hgroup.bordered
+        %h1 Current Sessions
+      = render partial: 'dashboards/sessions', locals: { sessions: client.upcoming_sessions }
+
+  - if client.previous_sessions.any?
+    %article
+      %hgroup.bordered
+        %h1 Old Sessions
+      = render partial: 'dashboards/previoussessions', locals: { sessions: client.previous_sessions }
+
+  - if client.counseling_sessions.empty?
+    %h2
+      You have no sessions booked. How about finding your perfect therapist?
+    = render partial: 'dashboards/search'
+  %hr

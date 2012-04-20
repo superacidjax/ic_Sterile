@@ -1,0 +1,80 @@
+en:
+  activerecord:
+    errors:
+      messages:
+        boolean: must be selected
+    attributes:
+      user: &user_attributes
+        state_or_province: State/Province
+        postal_code: Zip/Postal
+        skype_id: Skype ID
+      client:
+        <<: *user_attributes
+        emergency_contact_name: Name
+        emergency_contact_phone_number: Phone number
+        emergency_contact_relationship: Relationship
+      counselor:
+        employer_id_number: "EIN/SS#"
+        <<: *user_attributes
+  languages:
+    en: English
+    es: Spanish
+    fr: French
+    ar: Arabic
+    zh: Chinese
+    nl: Dutch
+    fr: French
+    de: German
+    he: Hebrew
+    hi: Hindi
+    it: Italian
+    ja: Japanese
+    ko: Korean
+    pt: Portuguese
+    ru: Russian
+    es: Spanish
+    ur: Urdu
+
+  issues:
+    abuse: Abuse
+    academics: School/Academics
+    addiction: Addiction
+    anger: Anger
+    anxiety: Anxiety
+    attention: Attention and Behavior
+    bipolar: Bipolar (and related disorders)
+    bullying: Bullying
+    career: Job/Career
+    crisis: Crisis
+    culture_religion: Culture/Religion
+    depression: Depression
+    eating: Eating Disorders
+    expat: Expat/Culture Shock
+    family: Family
+    fears: Fears/Phobias
+    goals: Goals and Plans
+    grief: Grief/Loss
+    life_transitions: Life Transitions
+    military: Military Issues
+    money: Money/Finances
+    moods: Moods/Personality
+    panic_attacks: Panic Attacks
+    parenting: Children/Parenting
+    post_trauma: Post Traumatic Stress
+    pregnancy: Pregnancy/Child Birth
+    pre_marriage: Pre-Marriage
+    relationships: Relationships
+    self_improvement: Self Improvement/Motivations
+    separation: Separation Issues
+    stress: Stress
+    suicide: Suicide
+    thinking_problems: Thinking Problems
+  religions:
+    buddhism: Buddhism
+    hinduism: Hinduism
+    protestant: Protestant
+    catholicism: Catholicism
+    islam: Islam
+    judaism: Judaism
+    eastern_orthodox: Greek/Eastern Orthodox
+    other_eastern: Other Eastern Religions

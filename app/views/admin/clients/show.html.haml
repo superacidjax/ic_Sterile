@@ -1,0 +1,35 @@
+%section#counselor_show
+  %hgroup
+    %h1 Clients
+  %p.back= link_to "Back to Clients List", admin_clients_path
+  #main
+    %article.counselor_stats
+      .stats
+        %h3= client.name
+        %p Joined #{client.created_at.to_date.strftime('%B %d, %Y')}
+    %nav.block_nav
+      %ul
+        %li.active= link_to "Overview", "#"
+        %li= link_to "Notes & Documents", notes_admin_client_path(client)
+    %article.info
+      %h4 Basic Information
+      %dl
+        %dt Email Address
+        %dd= mail_to client.email
+        %dt Time Zone
+        %dd= client.time_zone
+        %dt City
+        %dd= client.city
+        %dt State/Province
+        %dd= client.state_or_province
+        %dt Zip/Postal Code
+        %dd= client.postal_code
+        %dt Country
+        %dd= client.country
+    %article.info
+      %h4 Personal Information
+      %dl
+        %dt Birthday
+        %dd= client.birthday
+        %dt Gender
+        %dd= client.gender

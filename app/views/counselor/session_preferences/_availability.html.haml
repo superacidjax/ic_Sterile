@@ -1,0 +1,65 @@
+%hgroup
+
+  = fancy_form_for counselor, url: update_schedule_counselor_account_session_preference_path, html: { method: :put, class: "standard" } do |f|
+    %fieldset.preferred_appointment_times
+      %h1 Manage Session Availability
+    %p
+      Set Availability for the next two weeks starting
+      %strong= written_out(Time.now.beginning_of_week)
+    %br
+    %br
+    %p{style: "color: red"}
+      Click the dates to select your available times for that day.
+
+    -#.default
+      -#%label
+        -#%input(type="checkbox")
+        -#%strong Set this Schedule As Your Default.
+
+    %ul.weekdays.current
+      - day = Time.now.beginning_of_week
+      - begin
+        %li.active{class: "#{'past_day' if day < Time.now.beginning_of_day}"}
+          %a(href="#")
+            %h4{title: written_out(day)}
+              %strong= day.strftime("%a %e")
+              %span
+      - end while (day += 1.day) < Time.now.end_of_week
+
+    - week_dates(Date.today).each do |day|
+      %fieldset.times.current
+        %p Choose Available Times for
+        %a.clear(href="#") Clear Availability
+        %ul
+          - [0,4,8,12,16,20,1,5,9,13,17,21,2,6,10,14,18,22,3,7,11,15,19,23].each do |hour|
+            %li{class: "#{'checked' if counselor.available_at?(day, hour)}"}
+              %label
+                = f.check_box :day_info, name: "counselor[day_info][#{day}][hours][hour_#{hour}]", value: counselor.appointment_value_for(day, hour), id: "checkbox_#{day}_hour_#{hour}", checked: counselor.available_at?(day, hour)
+                = display_appointment_time(hour)
+
+    %ul.weekdays.next
+      - day = (Time.now.beginning_of_week + 7.days)
+      - begin
+        %li.active
+          %a(href="#")
+            %h4{title: written_out(day)}
+              %strong= day.strftime("%a, %e")
+              %span
+      - end while (day += 1.day) < (Time.now.end_of_week + 7.days)
+
+
+    - week_dates(Date.today + 7).each do |day|
+      %fieldset.times.next
+        %p Choose Available Times for
+        %a.clear(href="#") Clear Availability
+        %ul
+          - [0,4,8,12,16,20,1,5,9,13,17,21,2,6,10,14,18,22,3,7,11,15,19,23].each do |hour|
+            %li{class: "#{'checked' if counselor.available_at?(day, hour)}"}
+              %label
+                = f.check_box :day_info, name: "counselor[day_info][#{day}][hours][hour_#{hour}]", value: counselor.appointment_value_for(day, hour), id: "checkbox_#{day}_hour_#{hour}", checked: counselor.available_at?(day, hour)
+                = display_appointment_time(hour)
+
+
+    %fieldset.actions
+      %input(type="submit" value="Save Settings")
+      = link_to "Cancel", root_path

@@ -1,0 +1,16 @@
+%ul.standard
+  - sessions.each do |this_session|
+    %li
+      %dl.session
+        %dt Session
+        %dd= link_to this_session.counselor.name, this_session.counselor
+      %dl.date
+        %dt Date
+        %dd= this_session.start_datetime.strftime('%b %d, %Y')
+      %dl.time
+        %dt Time
+        %dd
+          = this_session.start_datetime.strftime("%l:%M %p")
+          = this_session.counselor.time_zone
+          time
+      

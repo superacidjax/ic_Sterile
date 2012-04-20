@@ -1,0 +1,36 @@
+- content_for :head do
+  %title
+    =@title = "Book an Appointment"
+  %script{src: "https://js.stripe.com/v1/", type: "text/javascript"}
+
+%section#sign_up
+  %header
+    %h1 Schedule a Session
+  %booking
+    %confirmation
+      %h2
+        Booking an appointment with
+        %strong
+          #{ counselor.name }
+        at
+        %strong
+          #{ start_datetime.strftime('%A, %B, %e at %l:%M%P')}
+        for
+        %strong
+          $#{counselor.session_rate.to_s}
+      = image_tag counselor.avatar.profile.url, alt: counselor.name
+
+    = fancy_form_for counseling_session, html: {:class => "standard"} do |f|
+      %fieldset
+        %h1 Payment Information
+        = render :partial => 'shared/stripe_form'
+
+      %fieldset.actions
+        %input(type="submit" value="Book Session")
+        = link_to "Cancel", cancel_counseling_sessions_path
+        = render 'shared/privacy'
+
+  :javascript
+    Stripe.setPublishableKey("#{STRIPE_PUBLISHABLE_KEY}");
+
+  = javascript_include_tag("stripe_form")

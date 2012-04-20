@@ -1,0 +1,15 @@
+%section#clients
+  %hgroup
+    %h1 Clients
+  %table.standard
+    %thead
+      %tr
+        %th Name
+        %th Email
+        %th Sign Up Date
+    %tbody
+      - clients.sort {|a,b| b.created_at <=> a.created_at}.each do |client| 
+        %tr.clickable
+          %td= link_to client.name, [:admin, client]
+          %td= mail_to client.email
+          %td= client.created_at.to_date.strftime('%B %d, %Y')

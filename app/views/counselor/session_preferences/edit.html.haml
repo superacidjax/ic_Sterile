@@ -1,0 +1,38 @@
+%section#edit_preferences
+  %header
+    %h1 Session Preferences
+
+  = render :partial => '/counselor/accounts/counselor_edit_nav'
+
+  = fancy_form_for counselor, url: counselor_account_session_preference_path, html: { method: :put, class: "standard" } do |f|
+    %fieldset.session_preferences
+      %h1 Session Preferences
+      %dl
+        %dt My hourly session rate (in US dollars)
+        %dd= f.text_field :session_rate
+        %dd
+          %strong
+            You will be paid your Session Rate minus a $10 iCouch commission. So if your Session Rate is $60, you will be paid $50 per session.
+      %dl
+        %dt I specialize in:
+        %dd.checkboxes
+          %ul
+            - issues.each do |issue|
+              %li
+                = check_box_tag 'counselor[issue_ids][]', issue.id, issues_ids.include?(issue.id) ,id: "counselor_issues_ids_#{issue.id}"
+                = label_tag "counselor_issues_ids_#{issue.id}", issue.name.titleize, false
+        %dt= f.label :other_issues
+        %dd= f.text_area :other_issues
+      %dl
+        %dt I speak these languages
+        %dd.checkboxes= f.check_box_list_with_other :languages
+      %dl
+        %dt I'm familiar with these religion(s) and denomination(s)
+        %dd.checkboxes= f.check_box_list_with_other :religions
+    %fieldset.actions
+      = f.submit 'Save Preferences'
+      = link_to "Cancel", root_path
+      = render 'shared/privacy'
+
+%section#counselor_dashboard
+  = render partial: 'availability'

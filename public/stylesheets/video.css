@@ -1,0 +1,444 @@
+/*
+----------------------------------------
+Tantek Celik's Whitepsace Reset
+     Author:  	Tantek Celik, Shane Riley
+    Version:  	(CC) 2010 Some Rights Reserved - http://creativecommons.org/licenses/by/2.0
+Description:	Resets default styling of common browsers to a common base
+----------------------------------------
+*/
+ul, ol {
+  list-style: none; }
+
+h1, h2, h3, h4, h5, h6, pre, code {
+  font-size: 1em; }
+
+ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, body, html, p, blockquote, fieldset, input, dl, dt, dd {
+  margin: 0;
+  padding: 0; }
+
+a img, :link img, :visited img, fieldset {
+  border: none; }
+
+address {
+  font-style: normal; }
+
+header, section, article, nav, footer, hgroup {
+  display: block; }
+
+body {
+  font: normal 13px "myriad-pro", sans-serif;
+  color: #3f3d32;
+  -webkit-font-smoothing: anti-aliased;
+  background: #86cacd url("/images/bg_body_banner_video.png") 0 0 repeat-x; }
+
+#sitewrapper {
+  background: transparent url("/images/bg_sitewrapper_banner_video.png") 100% 0 no-repeat; }
+
+a {
+  color: #0083a2; }
+  a:hover {
+    color: #7ac6c8; }
+
+a.button,
+button.button,
+input.button {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #0b4654;
+  background: #d4e9ee;
+  border: 1px solid #a3c8d0;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 11px;
+  padding: 2px 20px 1px 20px;
+  line-height: 240%;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }
+  a.button:hover,
+  button.button:hover,
+  input.button:hover {
+    background: #c4f6ff; }
+
+.hidden {
+  display: none; }
+
+#sitewrapper > header {
+  width: 980px;
+  margin: 0 auto;
+  position: relative;
+  min-height: 95px; }
+  #sitewrapper > header h1 {
+    margin: 0 0 15px 0;
+    padding: 15px 0 0 18px;
+    position: relative;
+    width: 200px;
+    z-index: 20; }
+    #sitewrapper > header h1 a {
+      display: block;
+      width: 162px;
+      height: 70px;
+      text-indent: -8685px;
+      overflow: hidden;
+      background: transparent url("/images/logo_header_video.png") 0 0 no-repeat; }
+  #sitewrapper > header nav a {
+    text-decoration: none; }
+  #sitewrapper > header nav ul {
+    overflow: hidden;
+    margin-left: 300px; }
+    #sitewrapper > header nav ul li {
+      float: left; }
+      #sitewrapper > header nav ul li a {
+        display: block;
+        color: #838179;
+        padding: 10px 15px;
+        font-weight: 400;
+        font-family: "myriad-pro", sans-serif;
+        font-size: 16px;
+        border-right: 2px solid #dce1d3;
+        border-left: 2px solid #dce1d3;
+        border-bottom: 2px solid #b0b5a5;
+        border-top: 2px solid #b0b5a5;
+        background: white url("/images/bg_nav-shadow.png") 0 100% repeat-x; }
+        #sitewrapper > header nav ul li a:hover {
+          background: #c7c7c7;
+          color: white; }
+      #sitewrapper > header nav ul li.active a {
+        border-color: #c43b84;
+        background: white;
+        color: #3f3d32; }
+      #sitewrapper > header nav ul li:first-of-type a {
+        -moz-border-radius-topleft: 7px;
+        border-top-left-radius: 7px;
+        -moz-border-radius-bottomleft: 7px;
+        border-bottom-left-radius: 7px; }
+      #sitewrapper > header nav ul li:last-of-type a {
+        -moz-border-radius-topright: 7px;
+        border-top-right-radius: 7px;
+        -moz-border-radius-bottomright: 7px;
+        border-bottom-right-radius: 7px; }
+  #sitewrapper > header nav a.billing {
+    display: block;
+    position: absolute;
+    right: 25px;
+    bottom: 0;
+    z-index: 2;
+    padding: 8px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background: #667f2e url("/images/bg_nav-shadow.png") 0 100% repeat-x; }
+  #sitewrapper > header #account_nav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    font-size: 12px;
+    min-height: 50px;
+    font-weight: bold;
+    text-transform: uppercase; }
+    #sitewrapper > header #account_nav section {
+      width: 980px;
+      margin: 0 auto; }
+      #sitewrapper > header #account_nav section ul.languages {
+        float: left;
+        padding: 10px 0 0 0; }
+        #sitewrapper > header #account_nav section ul.languages li {
+          display: inline; }
+      #sitewrapper > header #account_nav section article {
+        float: right;
+        padding: 10px 0 0 0; }
+        #sitewrapper > header #account_nav section article social {
+          clear: both;
+          padding: 35px 0 0 150px;
+          text-align: right;
+          float: left; }
+        #sitewrapper > header #account_nav section article p.messages {
+          float: left;
+          padding: 0 10px 0 0; }
+          #sitewrapper > header #account_nav section article p.messages a {
+            float: left;
+            margin: 2px 5px 0 0; }
+          #sitewrapper > header #account_nav section article p.messages span {
+            float: left;
+            padding: 2px 5px;
+            color: white;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            background: #0083a2; }
+        #sitewrapper > header #account_nav section article p.user {
+          float: left;
+          padding: 0 40px 0 0;
+          color: #777777;
+          font-weight: normal;
+          z-index: 10; }
+        #sitewrapper > header #account_nav section article ul.account {
+          float: right;
+          padding: 0 10px 0 0;
+          color: #777777; }
+          #sitewrapper > header #account_nav section article ul.account li {
+            display: inline;
+            padding: 0 3px 0 0; }
+            #sitewrapper > header #account_nav section article ul.account li a {
+              color: #b43c84;
+              margin: 0 3px 0 0; }
+        #sitewrapper > header #account_nav section article ul.findcounselor {
+          text-align: left;
+          float: left;
+          padding: 0 10px 0 0;
+          color: #777777; }
+          #sitewrapper > header #account_nav section article ul.findcounselor li {
+            display: inline;
+            padding: 0 3px 0 0; }
+            #sitewrapper > header #account_nav section article ul.findcounselor li a {
+              margin: 0 3px 0 0; }
+        #sitewrapper > header #account_nav section article p.emergency {
+          float: left; }
+          #sitewrapper > header #account_nav section article p.emergency a {
+            padding: 2px 4px;
+            color: white;
+            text-decoration: none;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            background: #cc0000; }
+
+#content {
+  text-align: center;
+  position: relative;
+  left: 50%;
+  width: 980px;
+  min-height: 520px;
+  padding: 0px;
+  margin: 0 0 0 -460px;
+  background: #86cacd; }
+  #content section > header {
+    width: 890px;
+    margin: 0 0 20px -50px;
+    overflow: hidden; }
+    #content section > header h1 {
+      float: left;
+      font-weight: normal;
+      padding: 10px 80px 10px 50px;
+      font-size: 30px;
+      color: white;
+      background: #b33c85 url("/images/bg_page-heading.png") 100% 0 no-repeat;
+      background-color: rgba(179, 60, 133, 0.9); }
+    #content section > header a {
+      font-weight: bold;
+      margin: 20px 0 0 0; }
+  #content .notice, #content .success, #content .alert, #content .tip {
+    clear: both;
+    padding: 17px 20px 17px 50px;
+    margin: 0 0 20px 0;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: #ffffe5 url("/images/icon_notice.png") 15px 15px no-repeat; }
+    #content .notice a, #content .success a, #content .alert a, #content .tip a {
+      font-weight: bold; }
+    #content .notice h2, #content .success h2, #content .alert h2, #content .tip h2 {
+      padding: 0 0 5px 0;
+      margin: 0;
+      font-size: 18px;
+      text-transform: none;
+      letter-spacing: 0px;
+      border: none;
+      background: transparent; }
+  #content .success {
+    background-color: #e7f3d5;
+    background-image: url("/images/icon_success.png"); }
+  #content .tip {
+    text-align: center;
+    background: #d9eeef;
+    padding: 30px 20px;
+    -moz-border-radius: 5px;
+    border-radius: 5px; }
+    #content .tip a {
+      font-weight: bold; }
+  #content section#video input#connectLink {
+    border: 1px solid #d4e9ee;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: #458b00;
+    font-weight: 300;
+    color: white;
+    font-family: "myriad-pro", sans-serif;
+    font-size: 21px;
+    padding: 4px 8px 4px 8px;
+    float: left;
+    text-align: left;
+    width: auto;
+    text-transform: uppercase;
+    text-decoration: none; }
+    #content section#video input#connectLink:hover {
+      border: 1px solid #c43b84;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      background: #eed9d3;
+      font-weight: 300;
+      color: #0b4654; }
+  #content section#video input#disconnectLink {
+    border: 1px solid #d4e9ee;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: #c43b84;
+    font-weight: 300;
+    color: white;
+    font-family: "myriad-pro", sans-serif;
+    font-size: 14px;
+    padding: 4px 8px 4px 8px;
+    float: left;
+    text-align: left;
+    width: auto;
+    text-transform: uppercase;
+    text-decoration: none; }
+    #content section#video input#disconnectLink:hover {
+      border: 1px solid #c43b84;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      background: #eed9d3;
+      font-weight: 300;
+      color: #0b4654; }
+  #content section#video input#publishLink {
+    border: 1px solid #d4e9ee;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: #458b00;
+    font-weight: 300;
+    color: white;
+    font-family: "myriad-pro", sans-serif;
+    font-size: 21px;
+    padding: 4px 8px 4px 8px;
+    float: left;
+    text-align: left;
+    width: auto;
+    text-transform: uppercase;
+    text-decoration: none; }
+    #content section#video input#publishLink:hover {
+      border: 1px solid #c43b84;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      background: #eed9d3;
+      font-weight: 300;
+      color: #0b4654; }
+  #content section#video input#unpublishLink {
+    border: 1px solid #d4e9ee;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: #c43b84;
+    font-weight: 300;
+    color: white;
+    font-family: "myriad-pro", sans-serif;
+    font-size: 14px;
+    padding: 4px 8px 4px 8px;
+    float: left;
+    text-align: left;
+    width: auto;
+    text-transform: uppercase;
+    text-decoration: none; }
+    #content section#video input#unpublishLink:hover {
+      border: 1px solid #c43b84;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      background: #eed9d3;
+      font-weight: 300;
+      color: #0b4654; }
+
+footer {
+  clear: both;
+  overflow: hidden;
+  width: 920px;
+  margin: 0 auto;
+  padding: 8px 25px 100px 25px; }
+  footer a {
+    text-decoration: none; }
+  footer nav {
+    width: 870px;
+    float: left; }
+    footer nav h3 {
+      padding: 0 0 28px 0; }
+      footer nav h3 a {
+        display: block;
+        width: 259px;
+        height: 40px;
+        text-indent: -8685px;
+        background: transparent url("/images/logo_footer.png") 0 0 no-repeat; }
+    footer nav li {
+      display: inline;
+      padding: 0 20px 0 0;
+      font-size: 11px;
+      font-weight: bold; }
+      footer nav li a {
+        color: #858477; }
+  footer section {
+    text-align: right; }
+    footer section social {
+      padding: 0 75px 0px 0;
+      float: right;
+      margin-bottom: 30px;
+      clear: both;
+      float: right; }
+    footer section ul {
+      float: right;
+      padding: 0 0 20px 0; }
+    footer section li {
+      float: left;
+      margin: 0 0 0 10px; }
+      footer section li a {
+        display: block;
+        padding: 10px 10px 10px 35px;
+        font-weight: bold;
+        color: #454643;
+        -moz-border-radius: 7px;
+        border-radius: 7px;
+        background: #d8dbd2;
+        border: 1px solid #c6c9c0; }
+        footer section li a.twitter {
+          background: #d8dbd2 url("/images/icon_twitter.png") 10px 50% no-repeat; }
+        footer section li a.facebook {
+          background: #d8dbd2 url("/images/icon_facebook.png") 10px 50% no-repeat; }
+        footer section li a.icouch_cbt {
+          background: #d8dbd2 url("/images/cbt_icon.png") 10px 50% no-repeat; }
+        footer section li a.gplus {
+          background: #d8dbd2 url("/images/icon_gplus.png") 10px 50% no-repeat; }
+        footer section li a:hover {
+          background-color: #d4e9ed;
+          border-color: #a7dbdb;
+          color: #454643; }
+    footer section p {
+      text-align: center;
+      clear: both;
+      font-size: 11px;
+      color: #858477; }
+      footer section p a {
+        font-weight: bold;
+        color: #858477; }
+
+article.copy p {
+  margin: 0 0 15px 0;
+  line-height: 170%; }
+article.copy h2 {
+  margin: 25px 0 15px 0;
+  font-size: 18px; }
+article.copy h3 {
+  margin: 25px 0 15px 0;
+  font-size: 14px; }
+article.copy ul, article.copy ol {
+  margin: 0 0 15px 0;
+  padding: 0 60px;
+  line-height: 170%; }
+  article.copy ul li, article.copy ol li {
+    margin: 0 0 5px 0;
+    list-style: disc; }
+article.copy ol li {
+  list-style: decimal; }
+article.copy dl {
+  margin: 30px 40px;
+  padding: 0 20px;
+  line-height: 170%;
+  border-left: 2px solid #e0e0de;
+  border-right: 2px solid #e0e0de; }
+  article.copy dl dt {
+    font-weight: bold; }
+  article.copy dl dd {
+    margin: 0 0 15px 10px; }

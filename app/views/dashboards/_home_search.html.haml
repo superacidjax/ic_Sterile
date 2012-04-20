@@ -1,0 +1,9 @@
+%searching
+  %search
+    = search_form_for q, url: search_counselors_path do |f|
+      = f.label :last_name_cont, "Last Name (optional)"
+      = f.text_field :last_name_cont
+      = f.select :specialities_issue_name_eq, Issue.all.map(&:name).map(&:titleize), :prompt => "Select Specialty (optional)"
+      = f.select :gender_eq, ["Female", "Male"], :prompt => "Select Gender (optional)"
+
+      %input.button_red{:type => "submit", :value => "Find a therapist"}

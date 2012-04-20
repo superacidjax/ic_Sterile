@@ -1,0 +1,70 @@
+- content_for :head do
+  %meta{:name => "description", :content => "Meet the Petersons. They're a normal family with problems like the rest of us. iCouch helped them -- it can help you too."}/
+  %meta{:name => "keywords", :content => "counseling, therapy, family therapy, online counseling, online therapy, international, video counseling, expat, teenagers, depression, anxiety, bipolar, etherapy" }/
+  = javascript_include_tag "jquery-1.6.2.min", "jquery.easing.1.3.min", "royal-slider-8.1.min"
+  = stylesheet_link_tag "rs_default", "royalslider"
+  %title
+    =@title = "iCouch | Meet the Petersons."
+
+%section#clientprofiles
+  %header
+    %h1
+      Meet the Petersons
+    %photo
+      = image_tag("/images/petersons_profile.jpg", :alt => "Meet the Petersons, iCouch clients.")
+    %h2
+      5 countries. 10 years.
+    %h3
+      They're a normal family a lot like yours.
+    %h3
+      They smile. They laugh. They travel.
+    %h3
+      But behind the smiles, they needed help.
+    %h4
+      "When we first moved to China, it was overwhelming. Dan's company helped with the logistics of the move, but there wasn't anything available to help us adjust.."
+    %h3{:style => "text-align:right"}
+      \..until
+      %strong
+        iCouch.
+    %h2
+      %br
+      =link_to "Find your help now!", search_counselors_path
+  %article
+    %iframe{:allowFullScreen => "", :frameborder => "0", :height => "518", :mozallowfullscreen => "", :src => "https://player.vimeo.com/video/37007932?title=0&byline=0&portrait=0&color=5d939f", :webkitAllowFullScreen => "", :width => "921"}
+    %hr
+    %profilesleft
+      %h1
+        Greta Peterson
+      %h3
+        Greta is a great mom, but with the stress of running a very active family, along with the added challenge of doing it all in a foreign country, she needed help.
+      %h4
+        %strong
+          "When we left for Shanghai, felt like I was uprooted from everything I knew. It wasn't easy to talk to Dan because he  always seemed so distracted. It's hard to be super-mom when you aren't feeling so super. My iCouch therapist really helped me get my spark back."
+    %profilesright
+      %h1
+        Dan Peterson
+      %h3
+        As a process engineer for a major multinational corporation, Dan is constantly traveling. With the stress of his job interfering with his family relationships, he needed help.
+      %h4
+        %strong
+          "I was incredibly stressed. My job has me going all over the place and when I got home, it felt like I didn't have the energy to be the husband and father my family deserved. My iCouch therapist helped me organize my priorities and find ways to reduce my stress."
+    %profilesleft
+      %h1
+        Samuel Peterson
+      %h3
+        Born overseas, Samuel, 9,  has lived his whole life as a "third culture kid." With the family moving so much, he had trouble making friends and feeling secure. He needed help.
+      %h4
+        %strong
+          "As soon as I made a new friend, it felt like we had to move away -- again. I didn't want to bother having friends anymore. My iCouch lady helped me figure out that I should be happy that I get to make so many friends in so many different places!"
+    %profilesright
+      %h1
+        Sara Peterson
+      %h3
+        Sara is like most 12-year-olds. She wanted to fit in and be popular. Her anxiety led to her cutting herself. She needed help.
+      %h4
+        %strong
+          "It's hard to explain why I cut myself. It just made me feel better, I guess. My iCouch therapist has been great; she helps me learn to be more relaxed and she understands me. I don't know everything yet, but I'm getting there!"
+    %findhelp
+      %h1
+        =link_to "Find your help now!", search_counselors_path
+    %hr

@@ -1,0 +1,22 @@
+- content_for :head do
+  %meta{:name => "description", :content => "How can iCouch online therapy help me beat stress?"}/
+  %meta{:name => "keywords", :content => "counseling, online therapy, therapy, stress, workplace stress" }/
+  - @title ="iCouch | Stress"
+  %title =@title
+
+%section#static_content
+  %header
+    %h1 Stress
+  %article.copy
+    %h2 Is stress getting you down?
+    %p
+      Stress is a normal part of life. However, if you aren't skilled in dealing with stress, it can become a serious problem. Stress is directly connected to a variety of health problems, especially high blood pressure. All stress can be managed if you have the proper tools. 
+    %p
+      Having online therapy sessions with an iCouch therapist can be especially helpful in learning how to deal with your own stress. Everyone is different, so simple stress tips you might find online may be helpful, but a therapist is trained to help you understand your own specific concerns and tailor a plan towards helping you beat stress.
+    %p
+      For some, it might be as simple as starting an exercise regimen. For others it might require figuring out some other issues in your life. Stress doesn't happen in a vacuum.. there are often root causes behind stress that could stem from relationship issues, workplace difficulties or even untreated anxiety disorders. Your iCouch therapist is highly trained in helping you understand your specific situation and helping you manage stress in a constructive, healthy way.
+    %p
+      To learn more about iCouch online therapy and therapy in general, please visit the #{link_to "iCouch Lounge", the_lounge_path}. Here you'll find frequently asked questions, an explanation of therapy styles and other great information. You're also invited to read the #{link_to "iCouch Blog", "http://blog.icouch.me/"} where you can find helpful information on all sorts of mental health and wellness topics.
+%section#home
+  = render partial: 'dashboards/search'
+  %hr
